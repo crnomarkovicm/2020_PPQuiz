@@ -13,6 +13,7 @@ class PPQuiz extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: "PPQuiz",
       theme: ThemeData(
+        fontFamily: "Sen",
         primaryColor: QuizColors.primary.color,
         accentColor: QuizColors.secondary.color,
         cursorColor: QuizColors.primary.color,

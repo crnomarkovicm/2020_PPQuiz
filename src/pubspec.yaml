@@ -43,7 +43,10 @@ flutter:
 
   assets:
     - assets/pictures/pozadina.jpeg
-
+    - assets/pictures/kzz.jpeg
+    - assets/pictures/nesto.jpeg
+    - assets/pictures/asoc.jpeg
+    - assets/pictures/pj.jpeg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
