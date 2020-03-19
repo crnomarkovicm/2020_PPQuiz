@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppquiz/splash.dart';
+import 'splash.dart';
+import 'ui/colors.dart';
+
 
 void main() => runApp(PPQuiz());
 
@@ -10,7 +12,8 @@ class PPQuiz extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       title: "PPQuiz",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: QuizColors.primary.color,
+        accentColor: QuizColors.secondary.color
       ),
       home: SplashScreen()
     );

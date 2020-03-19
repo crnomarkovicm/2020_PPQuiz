@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:ppquiz/home.dart';
+import 'ui/colors.dart';
+import 'home.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: QuizColors.background.color,
       body: Center(
         child: Text(
           'PPQuiz',
