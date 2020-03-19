@@ -26,10 +26,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-//        image: DecorationImage(
-//          image: ,
-//          fit: BoxFit.cover
-//        )
+        image: DecorationImage(
+          image: AssetImage("assets/pictures/pozadina.jpeg"),
+          fit: BoxFit.cover
+        )
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,

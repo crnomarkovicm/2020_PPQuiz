@@ -18,7 +18,7 @@ class PPQuiz extends StatelessWidget{
         cursorColor: QuizColors.primary.color,
         textTheme: TextTheme(
           headline: TextStyle(
-            fontSize: 36,
+            fontSize: 50,
             color: QuizColors.text.color,
             fontWeight: FontWeight.bold
           ),
