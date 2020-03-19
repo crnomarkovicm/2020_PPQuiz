@@ -76,15 +76,14 @@ class _HomeState extends State<Home> {
                         vertical: 10.0,
                       ),
                     ),
-                    Center(
-                      child: Text(
+                     Text(
                         opis_igre,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 21.0,
                           color: Colors.white
                         ),
                       ),
-                    ),
                   ],
                 )
             ),
