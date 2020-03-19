@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flip_card: ^0.4.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,7 +43,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/pictures/pozadina.jpeg
+    - assets/pictures/pozadina1.jpg
     - assets/pictures/kzz.jpeg
     - assets/pictures/nesto.jpeg
     - assets/pictures/asoc.jpeg
