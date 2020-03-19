@@ -84,6 +84,21 @@ class _HomeState extends State<Home> {
                           color: Colors.white
                         ),
                       ),
+                    Center(
+                      child: FlatButton(
+                        color: Colors.blueGrey,
+                        padding: EdgeInsets.all(2.00),
+                        onPressed: () {},
+                        child: Text(
+                          "Igraj!",
+                            style: TextStyle(
+                                fontSize: 21.0,
+                                color: Colors.white
+                            ),
+                        ),
+                      ),
+
+                    ),
                   ],
                 )
             ),
