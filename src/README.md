@@ -1,4 +1,4 @@
-# ppquiz
+# PPQuiz
 
 A new Flutter application.
 
