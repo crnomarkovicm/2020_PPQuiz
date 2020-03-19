@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'ui/colors.dart';
+//import 'ui/colors.dart';
 import 'home.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,24 +17,29 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(Duration(seconds: 3), (){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => home(),
+        builder: (context) => Home(),
       ));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: QuizColors.background.color,
-      body: Center(
-        child: Text(
-          'PPQuiz',
-          style: TextStyle(
-            fontSize: 50.0,
-            color: Colors.white
+    return Container(
+      decoration: BoxDecoration(
+//        image: DecorationImage(
+//          image: ,
+//          fit: BoxFit.cover
+//        )
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: Text(
+            'PPQuiz',
+            style: Theme.of(context).textTheme.headline,
           ),
         ),
-      ),
+      )
     );
   }
 }
