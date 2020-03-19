@@ -7,17 +7,20 @@ enum QuizColors{
   secondary,
   background,
   text,
-  splash
+  darkPrimary,
+  darkSecondary,
+  darkBackground
 }
 
 extension QuizColorsExtended on QuizColors{
   static const colors = {
-    QuizColors.primary: Color(0xFF172028),
-    QuizColors.secondary: Color(0xFF01938),
-    QuizColors.background: Color(0xFF000000),
+    QuizColors.primary: Color(0xFF2196F3),
+    QuizColors.secondary: Color(0xFF2196F3),
+    QuizColors.background: Color(0xFFFFFFFF),
     QuizColors.text: Color(0xFFFFFFFF),
-    QuizColors.splash: Color(0xFF06051E),
-
+    QuizColors.darkPrimary: Color(0xFF051938),
+    QuizColors.darkSecondary: Color(0xFF172028),
+    QuizColors.darkBackground: Color(0xFF06051E)
   };
 
 Color get color => colors[this];

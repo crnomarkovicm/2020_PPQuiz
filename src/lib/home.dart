@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
       ),
       child: InkWell(
         child: Material(
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
           elevation: 10.0,
           borderRadius: BorderRadius.circular(20.0),
           child: FlipCard(
@@ -59,10 +59,7 @@ class _HomeState extends State<Home> {
                     Center(
                       child: Text(
                         naziv_igre,
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          color: Colors.white,
-                        ),
+                        style: Theme.of(context).textTheme.subhead,
                       ),
                     ),
                   ],
@@ -79,10 +76,7 @@ class _HomeState extends State<Home> {
                      Text(
                         opis_igre,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 21.0,
-                          color: Colors.white
-                        ),
+                        style: Theme.of(context).textTheme.body1,
                       ),
                     Center(
                       child: FlatButton(
@@ -91,10 +85,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: Text(
                           "Igraj!",
-                            style: TextStyle(
-                                fontSize: 21.0,
-                                color: Colors.white
-                            ),
+                            style: Theme.of(context).textTheme.body1,
                         ),
                       ),
 
@@ -111,14 +102,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Theme.of(context).accentColor,
         centerTitle: true,
         title: Text(
           'PPQuiz',
-          style: TextStyle(
-            fontSize: 25.0
-          ),
+          style: Theme.of(context).textTheme.display1,
         ),
       ),
       body: ListView(
