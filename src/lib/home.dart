@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:ppquiz/koznazna.dart';
 
 
 class Home extends StatefulWidget {
@@ -87,7 +88,11 @@ class _HomeState extends State<Home> {
                       child: FlatButton(
                         color: Colors.blueGrey,
                         padding: EdgeInsets.all(2.00),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => getjson(),
+                          ));
+                        },
                         child: Text(
                           "Igraj!",
                             style: Theme.of(context).textTheme.body1,
