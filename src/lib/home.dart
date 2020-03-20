@@ -7,7 +7,10 @@ import 'package:flip_card/flip_card.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
+
 }
+
+
 
 class _HomeState extends State<Home> {
   List<String> images = [
@@ -16,6 +19,8 @@ class _HomeState extends State<Home> {
     "assets/pictures/kzz.jpeg",
     "assets/pictures/nesto.jpeg",
   ];
+
+
 
   // Nakon splashscreen-a prikazuje se pocetni ekran na kom
   // imamo mogucnost da izaberemo igru. Ovde pravimo jednu
@@ -104,6 +109,24 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
+        actions: <Widget>[
+          Column(
+//            TODO->ubaciti ovo u kontejnere i ispraviti visinu svakog
+            children: <Widget>[
+              Text('Tema: ',
+                style: Theme.of(context).textTheme.body2
+              ),
+              Expanded(
+                  child:Switch(
+                    value: false,
+                    activeColor: Theme.of(context).cursorColor,
+                    inactiveThumbColor: Theme.of(context).backgroundColor,
+                    // TODO
+                    onChanged: (bool) {},
+              ))
+            ],
+          )
+        ],
         backgroundColor: Theme.of(context).accentColor,
         centerTitle: true,
         title: Text(
