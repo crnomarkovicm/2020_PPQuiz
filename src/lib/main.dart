@@ -18,13 +18,19 @@ class PPQuiz extends StatelessWidget{
         accentColor: QuizColors.secondary.color,
         cursorColor: QuizColors.primary.color,
         backgroundColor: QuizColors.background.color,
+        buttonColor: QuizColors.button.color,
         brightness: Brightness.light,
         textTheme: TextTheme(
-          display1: TextStyle(
+          display3: TextStyle(
+            fontSize: 35.0,
+            fontWeight: FontWeight.w700,
+            color: QuizColors.text2.color,
+          ),
+          headline: TextStyle(
             fontSize: 30,
             color: QuizColors.text.color
           ),
-          headline: TextStyle(
+          title: TextStyle(
             fontSize: 50,
             color: QuizColors.text.color,
             fontWeight: FontWeight.bold
@@ -33,14 +39,26 @@ class PPQuiz extends StatelessWidget{
             color: QuizColors.text.color,
             fontSize: 21
           ),
+          button: TextStyle(
+              color: QuizColors.text.color,
+              fontSize: 21
+          ),
           subhead: TextStyle(
             color: QuizColors.text.color,
             fontSize: 24
           ),
-          body2: TextStyle(
+          display2: TextStyle(
+              color: QuizColors.text.color,
+              fontSize: 16.0
+          ),
+          overline: TextStyle(
               color: QuizColors.text.color,
               fontSize: 16
-          )
+          ),
+          display1: TextStyle(
+            fontSize: 24.0,
+            color: QuizColors.text2.color,
+          ),
         )
       ),
       darkTheme: ThemeData(

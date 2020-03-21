@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
           child: Text(
             'PPQuiz',
-            style: Theme.of(context).textTheme.headline,
+            style: Theme.of(context).textTheme.title,
           ),
         ),
       )

@@ -86,7 +86,7 @@ class _HomeState extends State<Home> {
                       ),
                     Center(
                       child: FlatButton(
-                        color: Colors.blueGrey,
+                        color: Theme.of(context).buttonColor,
                         padding: EdgeInsets.all(2.00),
                         onPressed: () {
                           Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                         },
                         child: Text(
                           "Igraj!",
-                            style: Theme.of(context).textTheme.body1,
+                            style: Theme.of(context).textTheme.button,
                         ),
                       ),
 
@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
 //            TODO->ubaciti ovo u kontejnere i ispraviti visinu svakog
             children: <Widget>[
               Text('Tema: ',
-                style: Theme.of(context).textTheme.body2
+                style: Theme.of(context).textTheme.overline
               ),
               Expanded(
                   child:Switch(
@@ -132,11 +132,11 @@ class _HomeState extends State<Home> {
             ],
           )
         ],
-        backgroundColor: Theme.of(context).accentColor,
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           'PPQuiz',
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.headline,
         ),
       ),
       body: ListView(

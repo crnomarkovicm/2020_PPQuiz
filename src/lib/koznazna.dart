@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class getjson extends StatelessWidget {
               child: Text(
                 "Loading...",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: QuizColors.text2.color,
                 ),
               ),
             ),
@@ -50,13 +50,10 @@ class _koznaznaState extends State<koznazna> {
           onPressed: (){},
           child: Text(
             "Odgovor 1",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 16.0
-            ),
+            style: Theme.of(context).textTheme.display2,
           ),
-          color: Colors.indigoAccent,
-          splashColor: Colors.indigo[700],
+          color: QuizColors.primary.color,
+          splashColor: QuizColors.secondary.color,
           highlightColor: Colors.indigo[700],
           minWidth: 200.0,
           height: 45.0,
@@ -77,10 +74,7 @@ class _koznaznaState extends State<koznazna> {
               alignment: Alignment.bottomLeft,
               child:  Text(
                 "Neko pitanje bla bla?",
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.black,
-                ),
+                style: Theme.of(context).textTheme.display1,
               ),
             ),
           ),
@@ -104,11 +98,7 @@ class _koznaznaState extends State<koznazna> {
               child: Center(
                 child: Text(
                   "10",
-                  style: TextStyle(
-                    fontSize: 35.0,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                  ),
+                  style: Theme.of(context).textTheme.display3
                 ),
               ),
             ),
