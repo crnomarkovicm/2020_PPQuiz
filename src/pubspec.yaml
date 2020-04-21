@@ -45,10 +45,10 @@ flutter:
   assets:
     - assets/koznazna.json
     - assets/pictures/pozadina1.jpg
-    - assets/pictures/kzz.jpeg
+    - assets/pictures/koznazna.jpg
     - assets/pictures/nesto.jpeg
-    - assets/pictures/asoc.jpeg
-    - assets/pictures/pj.jpeg
+    - assets/pictures/asocijacije.jpg
+    - assets/pictures/pogodijezik.jpg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

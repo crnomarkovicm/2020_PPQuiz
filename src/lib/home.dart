@@ -15,9 +15,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<String> images = [
-    "assets/pictures/asoc.jpeg",
-    "assets/pictures/pj.jpeg",
-    "assets/pictures/kzz.jpeg",
+    "assets/pictures/asocijacije.jpg",
+    "assets/pictures/pogodijezik.jpg",
+    "assets/pictures/koznazna.jpg",
     "assets/pictures/nesto.jpeg",
   ];
 
@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
   // imamo mogucnost da izaberemo igru. Ovde pravimo jednu
   // karticu na kojoj ce biti ispisan znak ili ime igre kako
   // bi korisnik lako izabrao koju igru zeli.
-  Widget customcard(naziv_igre, logo_igre, opis_igre){
+  Widget customcard(naziv_igre, logo_igre, opis_igre, indikator){
     return Padding(
       padding: EdgeInsets.all(
         20.0,
@@ -89,9 +89,12 @@ class _HomeState extends State<Home> {
                         color: Theme.of(context).buttonColor,
                         padding: EdgeInsets.all(2.00),
                         onPressed: () {
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => getjson(),
-                          ));
+                          if (indikator == "kzz") {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => ko_zna_zna(),
+                                ));
+                          }
                         },
                         child: Text(
                           "Igraj!",
@@ -141,10 +144,10 @@ class _HomeState extends State<Home> {
       ),
       body: ListView(
         children: <Widget>[
-          customcard("Asocijacije", images[0], "Cilj ove igre je sa sto manje otvorenih polja naci prvo resenja za kolone A, B, C i D a potom i konacno resenje"),
-          customcard("Pogodi jezik", images[1], "Cilj ove igre je otvaranjem datih osobina pogoditi o kom programskom jeziku je rec "),
-          customcard("Ko zna zna", images[2], "Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora. Ukoliko nakon 10s nije odgovoreno, smatra se da ste pogresili"),
-          customcard("Jos jedna igra, smislicemo!", images[3], "TODO"),
+          customcard("Asocijacije", images[0], "Cilj ove igre je sa sto manje otvorenih polja naci prvo resenja za kolone A, B, C i D a potom i konacno resenje", "asoc"),
+          customcard("Pogodi jezik", images[1], "Cilj ove igre je otvaranjem datih osobina pogoditi o kom programskom jeziku je rec ", "pj"),
+          customcard("Ko zna zna", images[2], "Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora. Ukoliko nakon 10s nije odgovoreno, smatra se da ste pogresili", "kzz"),
+          customcard("Jos jedna igra, smislicemo!", images[3], "TODO", "nova"),
         ],
       )
     );

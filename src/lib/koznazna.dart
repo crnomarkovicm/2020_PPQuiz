@@ -3,7 +3,7 @@ import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class getjson extends StatelessWidget {
+class ko_zna_zna extends StatelessWidget {
 
 
 
