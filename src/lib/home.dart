@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:ppquiz/koznazna.dart';
+import 'package:ppquiz/asocijacije.dart';
 
 
 class Home extends StatefulWidget {
@@ -93,6 +94,11 @@ class _HomeState extends State<Home> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                   builder: (context) => ko_zna_zna(),
+                                ));
+                          } else if (indikator == "asoc"){
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => asocijacije(),
                                 ));
                           }
                         },
