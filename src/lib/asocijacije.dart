@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 class asocijacije extends StatelessWidget {
 
@@ -135,41 +136,81 @@ class _asocState extends State<asoc> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row (
-            children: <Widget>[
-              kolona1(),
-              kolona1(),
-            ],
-          ),
-    MaterialButton(
-             onPressed: (){},
-             child: Text(
-               "Konacno resenje",
-               style: Theme.of(context).textTheme.display2,
-             ),
-             color: QuizColors.secondary.color,
-             splashColor: QuizColors.secondary.color,
-             highlightColor: Colors.indigo[700],
-             minWidth: 300.0,
-             height: 40.0,
-             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
-         ),
+    return WillPopScope(
+      onWillPop: (){
+        return showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text(
+                "PPQuiz",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              content: Text(
+                "Da li ste sigurni da zelite da izadjete iz aplikacije dok je igra 'Asocijacije' u toku?",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'Ne',
+                  ),
+                ),
+                FlatButton(
 
-          Row (
-            children: <Widget>[
-              kolona2(),
-              kolona2(),
-            ],
-          ),
+                  child: Text(
+                    'Da',
+                  ),
+                  onPressed: () {
+                    exit(0);
+                  },
+                ),
+              ],
+            )
+        );
+      },
+      child: Container(
+        child: Column(
+            children: [
+              Row (
+                children: <Widget>[
+                  kolona1(),
+                  kolona1(),
+                ],
+              ),
+              MaterialButton(
+                  onPressed: (){},
+                  child: Text(
+                    "Konacno resenje",
+                    style: Theme.of(context).textTheme.display2,
+                  ),
+                  color: QuizColors.secondary.color,
+                  splashColor: QuizColors.secondary.color,
+                  highlightColor: Colors.indigo[700],
+                  minWidth: 300.0,
+                  height: 40.0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+              ),
+
+              Row (
+                children: <Widget>[
+                  kolona2(),
+                  kolona2(),
+                ],
+              ),
 
 
-              ]
+            ]
 
-      ),
-      color: QuizColors.background.color,
+        ),
+        color: QuizColors.background.color,
+      )
     );
   }
 }

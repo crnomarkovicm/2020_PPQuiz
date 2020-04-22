@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 class ko_zna_zna extends StatelessWidget {
 
@@ -64,47 +65,90 @@ class _koznaznaState extends State<koznazna> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              alignment: Alignment.bottomLeft,
-              child:  Text(
-                "Neko pitanje bla bla?",
-                style: Theme.of(context).textTheme.display1,
+    return WillPopScope(
+      onWillPop: (){
+        return showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(
+              "PPQuiz",
+              style: TextStyle(
+                color: Colors.black,
               ),
             ),
-          ),
-          Expanded(
-            flex: 6,
-            child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  choicebutton(),
-                  choicebutton(),
-                  choicebutton(),
-                  choicebutton()
-                ],
+            content: Text(
+              "Da li ste sigurni da zelite da izadjete iz aplikacije dok je igra 'Ko zna zna' u toku?",
+              style: TextStyle(
+                color: Colors.black,
               ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              child: Center(
+            actions: <Widget>[
+              FlatButton(
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
                 child: Text(
-                  "10",
-                  style: Theme.of(context).textTheme.display3
+                  'Ne',
+                ),
+              ),
+              FlatButton(
+
+                child: Text(
+                  'Da',
+                ),
+                onPressed: () {
+                  exit(0);
+                },
+              ),
+            ],
+          )
+        );
+      },
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            Expanded(
+              flex: 3,
+              child: Container(
+                padding: EdgeInsets.all(15.0),
+                alignment: Alignment.bottomLeft,
+                child:  Text(
+                  "Neko pitanje bla bla?",
+                  style: Theme.of(context).textTheme.display1,
                 ),
               ),
             ),
-          ),
-        ],
+            Expanded(
+              flex: 6,
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    choicebutton(),
+                    choicebutton(),
+                    choicebutton(),
+                    choicebutton()
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                child: Center(
+                  child: Text(
+                      "10",
+                      style: Theme.of(context).textTheme.display3
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+
+
