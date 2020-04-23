@@ -119,7 +119,7 @@ class _koznaznaState extends State<koznazna> {
     }
     else{
       colortoshow = wrong;
-      marks = marks - 2;
+      marks = marks - 1;
     }
     setState(() {
       btncolor[k] = colortoshow;

@@ -15,16 +15,37 @@ class _koznazna_scoreState extends State<koznazna_score> {
   List<String> images = [
     "assets/pictures/srecan.jpeg",
     "assets/pictures/tuzan.png",
-    "assets/pictures/smor.webp",
+    "assets/pictures/smor.png",
   ];
+
+  String message;
+  String image;
+
+  @override
+  void initState(){
+    if(marks < 5){
+      message = "Vise srece sledeci put...";
+      image = images[1];
+    }
+    else if(marks < 10){
+      message = "Mozes ti to i bolje....";
+      image = images[2];
+    }
+    else{
+      message = "Cestitamo! Odlican rezultat.";
+      image = images[0];
+    }
+  }
+
   int marks;
+
   _koznazna_scoreState(this.marks);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Result",
+          "Rezultat",
         ),
       ),
       body: Column(
@@ -43,7 +64,7 @@ class _koznazna_scoreState extends State<koznazna_score> {
                           child: ClipRect(
                             child: Image(
                               image: AssetImage(
-                              "assets/pictures/srecan.jpeg",
+                              image,
                             ),
                           ),
                         ),
@@ -56,7 +77,7 @@ class _koznazna_scoreState extends State<koznazna_score> {
                       ),
                       child: Center(
                         child: Text(
-                          "Skor: $marks",
+                          "             Skor: $marks\n$message",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20.0,

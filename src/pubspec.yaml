@@ -51,7 +51,7 @@ flutter:
     - assets/pictures/asocijacije.jpg
     - assets/pictures/pogodijezik.jpg
     - assets/pictures/srecan.jpeg
-    - assets/pictures/smor.webp
+    - assets/pictures/smor.png
     - assets/pictures/tuzan.png
   # To add assets to your application, add an assets section, like this:
   # assets:
