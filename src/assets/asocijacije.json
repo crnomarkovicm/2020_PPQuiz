@@ -1,8 +1,34 @@
 [
   {
-    "1" : "Prva kolona",
-    "2" : "Druga kolona",
-    "3" : "Treca kolona",
-    "4" : "Cetvrta kolona"
+    "A" : "Resenje A",
+    "B" : "Resenje B",
+    "C" : "Resenje C",
+    "D" : "Resenje D"
+  },
+  {
+    "A":{
+      "1": "Asoc a1",
+      "2": "Asoc a2",
+      "3": "Asoc a3",
+      "4": "Asoc a4"
+    },
+    "B":{
+      "1": "Asoc b1",
+      "2": "Asoc b2",
+      "3": "Asoc b3",
+      "4": "Asoc b4"
+    },
+    "C":{
+      "1": "Asoc c1",
+      "2": "Asoc c2",
+      "3": "Asoc c3",
+      "4": "Asoc c4"
+    },
+    "D":{
+      "1": "Asoc d1",
+      "2": "Asoc d2",
+      "3": "Asoc d3",
+      "4": "Asoc d4"
+    }
   }
 ]

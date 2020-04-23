@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:flip_card/flip_card.dart';
+
 import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class asocijacije extends StatelessWidget {
     return FutureBuilder(
       future: DefaultAssetBundle.of(context).loadString("assets/asocijacije.json"),
       builder: (context, snapshot){
-        var mydata = json.decode(snapshot.data.toString());
+        List mydata = json.decode(snapshot.data.toString());
         if(mydata == null){
           return Scaffold(
             body: Center(
@@ -27,7 +29,7 @@ class asocijacije extends StatelessWidget {
           );
         }
         else{
-          return asoc();
+          return asoc(mydata : mydata);
         }
       },
     );
@@ -35,35 +37,69 @@ class asocijacije extends StatelessWidget {
 }
 
 class asoc extends StatefulWidget {
+
+  var mydata;
+
+  asoc({Key key, @required this.mydata}) : super(key : key);
   @override
-  _asocState createState() => _asocState();
+  _asocState createState() => _asocState(mydata);
 }
 
 class _asocState extends State<asoc> {
-  Widget polje(){
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 5.0,
-        horizontal: 5.0,
-      ),
-      child: MaterialButton(
-          onPressed: (){},
-          child: Text(
-            "Polje",
-            style: Theme.of(context).textTheme.display2,
+
+  var mydata;
+  _asocState(this.mydata);
+
+  Widget polje(oznaka){
+    return FlipCard(
+      direction: FlipDirection.HORIZONTAL,
+      front:  Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 10.0,
+            horizontal: 5.0,
           ),
-          color: QuizColors.primary.color,
-          splashColor: QuizColors.secondary.color,
-          highlightColor: Colors.indigo[700],
-          minWidth: 200.0,
-          height: 30.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))
+          child: Material (
+            elevation: 5.0,
+            borderRadius:  BorderRadius.circular(100.00),
+            child: Container(
+              child: Text(
+                oznaka,
+                style: Theme.of(context).textTheme.display2,
+                textAlign: TextAlign.center,
+              ),
+              color: QuizColors.primary.color,
+              width: 200.0,
+              height: 40.0,
+            ),
+
+          )
+      ),
+      back:  Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: 10.0,
+            horizontal: 5.0,
+          ),
+          child: Material (
+            elevation: 5.0,
+            borderRadius:  BorderRadius.circular(100.00),
+            child: Container(
+              child: Text(
+                mydata[1][oznaka[0]][oznaka[1]].toString(),
+                style: Theme.of(context).textTheme.display2,
+                textAlign: TextAlign.center,
+              ),
+              color: QuizColors.primary.color,
+              width: 200.0,
+              height: 40.0,
+            ),
+          )
       ),
     );
 
   }
+  TextEditingController _textFieldController = TextEditingController();
 
-  Widget kolona1(){
+  Widget kolonaA(){
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 10.0,
@@ -72,14 +108,34 @@ class _asocState extends State<asoc> {
       child: Container(
         child: Column(
           children: [
-            polje(),
-            polje(),
-            polje(),
-            polje(),
+            polje("A1"),
+            polje("A2"),
+            polje("A3"),
+            polje("A4"),
             MaterialButton(
-                onPressed: (){},
+                onPressed: (){
+                  return showDialog(
+                      context: context,
+                      builder:  (context) => AlertDialog(
+                          title:Text("Unesite resenje kolone A: ",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15) ),
+                          content: TextField(
+                            controller: _textFieldController,
+                          ),
+                        actions: <Widget>[ FlatButton(
+                          child: new Text('OK'),
+                          onPressed: () {},
+
+                        )
+                        ],
+
+                      )
+                  );
+                },
                 child: Text(
-                  "Resenje kolone",
+                  "Resenje kolone A",
                   style: Theme.of(context).textTheme.display2,
                 ),
                 color: QuizColors.secondary.color,
@@ -97,8 +153,7 @@ class _asocState extends State<asoc> {
     )
     );
   }
-
-  Widget kolona2(){
+  Widget kolonaB(){
     return Padding(
         padding: EdgeInsets.symmetric(
           vertical: 10.0,
@@ -107,10 +162,34 @@ class _asocState extends State<asoc> {
         child: Container(
           child: Column(
             children: [
+              polje("B1"),
+              polje("B2"),
+              polje("B3"),
+              polje("B4"),
               MaterialButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    return showDialog(
+                        context: context,
+                        builder:  (context) => AlertDialog(
+                            title:Text("Unesite resenje kolone: B",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15) ),
+                            content: TextField(
+                              controller: _textFieldController,
+                            ),
+                          actions: <Widget>[ FlatButton(
+                            child: new Text('OK'),
+                            onPressed: () {},
+
+                          )
+                          ],
+
+                        )
+                    );
+                  },
                   child: Text(
-                    "Resenje kolone",
+                    "Resenje kolone B",
                     style: Theme.of(context).textTheme.display2,
                   ),
                   color: QuizColors.secondary.color,
@@ -119,12 +198,7 @@ class _asocState extends State<asoc> {
                   minWidth: 200.0,
                   height: 40.0,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
-              ),
-              polje(),
-              polje(),
-              polje(),
-              polje(),
-
+              )
             ],
           ),
           width: 185.0,
@@ -134,6 +208,116 @@ class _asocState extends State<asoc> {
     );
   }
 
+  Widget kolonaC(){
+    return Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 10.0,
+        ),
+        child: Container(
+          child: Column(
+            children: [
+              MaterialButton(
+                  onPressed: (){
+                    return showDialog(
+                        context: context,
+                        builder:  (context) => AlertDialog(
+                            title:Text("Unesite resenje kolone C: ",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15) ),
+                            content: TextField(
+                              controller: _textFieldController,
+                            ),
+                          actions: <Widget>[ FlatButton(
+                            child: new Text('OK'),
+                            onPressed: () {},
+
+                          )
+                          ],
+
+                        )
+                    );
+                  },
+                  child: Text(
+                    "Resenje kolone C",
+                    style: Theme.of(context).textTheme.display2,
+                  ),
+                  color: QuizColors.secondary.color,
+                  splashColor: QuizColors.secondary.color,
+                  highlightColor: Colors.indigo[700],
+                  minWidth: 200.0,
+                  height: 40.0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+              ),
+              polje("C4"),
+              polje("C3"),
+              polje("C2"),
+              polje("C1"),
+
+            ],
+          ),
+          width: 185.0,
+          height: 290.0,
+          color: QuizColors.primary.color ,
+        )
+    );
+  }
+  Widget kolonaD(){
+    return Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 10.0,
+        ),
+        child: Container(
+          child: Column(
+            children: [
+              MaterialButton(
+                  onPressed: (){
+                    return showDialog(
+                        context: context,
+                        builder:  (context) => AlertDialog(
+                          title:Text("Unesite resenje kolone D: ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15) ),
+                          content: TextField(
+                            controller: _textFieldController,
+                          ),
+                          actions: <Widget>[ FlatButton(
+                            child: new Text('OK'),
+                            onPressed: () {},
+
+                          )
+                          ],
+
+                        )
+                        );
+                  },
+                  child: Text(
+                    "Resenje kolone D",
+                    style: Theme.of(context).textTheme.display2,
+                  ),
+                  color: QuizColors.secondary.color,
+                  splashColor: QuizColors.secondary.color,
+                  highlightColor: Colors.indigo[700],
+                  minWidth: 200.0,
+                  height: 40.0,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+              ),
+              polje("D4"),
+              polje("D3"),
+              polje("D2"),
+              polje("D1"),
+
+            ],
+          ),
+          width: 185.0,
+          height: 290.0,
+          color: QuizColors.primary.color ,
+        )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -180,12 +364,29 @@ class _asocState extends State<asoc> {
             children: [
               Row (
                 children: <Widget>[
-                  kolona1(),
-                  kolona1(),
+                  kolonaA(),
+                  kolonaB(),
                 ],
               ),
               MaterialButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    return showDialog(
+                        context: context,
+                        builder:  (context) => AlertDialog(
+                            title:Text("Unesite konacno resenje: ",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15) ),
+                            content: TextField(
+                              controller: _textFieldController,
+                            ),
+                          actions: <Widget>[ FlatButton(
+                            child: new Text('OK'),
+                      onPressed: () {},
+
+                        )
+                    ]));
+                  },
                   child: Text(
                     "Konacno resenje",
                     style: Theme.of(context).textTheme.display2,
@@ -200,8 +401,8 @@ class _asocState extends State<asoc> {
 
               Row (
                 children: <Widget>[
-                  kolona2(),
-                  kolona2(),
+                  kolonaC(),
+                  kolonaD(),
                 ],
               ),
 
