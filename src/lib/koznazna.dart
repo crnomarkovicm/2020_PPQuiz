@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:ppquiz/koznazna_score.dart';
+
 import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +100,9 @@ class _koznaznaState extends State<koznazna> {
         i++;
       }
       else{
-
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => koznazna_score(marks: marks),
+        ));
       }
       btncolor["a"] = Colors.indigoAccent;
       btncolor["b"] = Colors.indigoAccent;
@@ -115,6 +119,7 @@ class _koznaznaState extends State<koznazna> {
     }
     else{
       colortoshow = wrong;
+      marks = marks - 2;
     }
     setState(() {
       btncolor[k] = colortoshow;

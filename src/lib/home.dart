@@ -7,23 +7,18 @@ import 'package:ppquiz/asocijacije.dart';
 import 'dart:io';
 
 
-class Home extends StatefulWidget {
+class homepage extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
-
+  _homepageState createState() => _homepageState();
 }
 
-
-
-class _HomeState extends State<Home> {
+class _homepageState extends State<homepage> {
   List<String> images = [
     "assets/pictures/asocijacije.jpg",
     "assets/pictures/pogodijezik.jpg",
     "assets/pictures/koznazna.jpg",
     "assets/pictures/nesto.jpeg",
   ];
-
-
 
   // Nakon splashscreen-a prikazuje se pocetni ekran na kom
   // imamo mogucnost da izaberemo igru. Ovde pravimo jednu

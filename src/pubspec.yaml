@@ -50,6 +50,9 @@ flutter:
     - assets/pictures/nesto.jpeg
     - assets/pictures/asocijacije.jpg
     - assets/pictures/pogodijezik.jpg
+    - assets/pictures/srecan.jpeg
+    - assets/pictures/smor.webp
+    - assets/pictures/tuzan.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
