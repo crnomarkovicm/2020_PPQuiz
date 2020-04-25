@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:async';
+import 'dart:math';
 
 class ko_zna_zna extends StatelessWidget {
 
@@ -56,6 +57,7 @@ class _koznaznaState extends State<koznazna> {
   Color wrong = Colors.red;
   int marks = 0;
   int i = 1;
+  int j = 0;
   int timer = 10;
   String showtimer = "10";
 
@@ -66,10 +68,19 @@ class _koznaznaState extends State<koznazna> {
     "d": Colors.indigoAccent,
   };
 
+  var rng = new Random();
+  List<int> lista = [];
+
   bool canceltimer = false;
 
   @override
   void initState(){
+    j = rng.nextInt(4);
+    if(j == 0)
+      j = 1;
+    else if(j > 3)
+      j = 1;
+    lista.add(j);
     starttimer();
     super.initState();
   }
@@ -97,8 +108,23 @@ class _koznaznaState extends State<koznazna> {
     canceltimer = false;
     timer = 10;
     setState(() {
-      if(i < 3){
+      if(i < 3) {
         i++;
+        j = rng.nextInt(4);
+        if(j == 0)
+          j = 1;
+        else if(j > 3)
+          j = 1;
+
+        while(lista.indexOf(j) != -1){
+          j = rng.nextInt(4);
+          if(j == 0)
+            j = 1;
+          else if(j > 3)
+            j = 1;
+        }
+
+        lista.add(j);
       }
       else{
         Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -114,7 +140,7 @@ class _koznaznaState extends State<koznazna> {
   }
 
   void checkanswer(String k){
-    if(mydata[2][i.toString()] == mydata[1][i.toString()][k]){
+    if(mydata[2][j.toString()] == mydata[1][j.toString()][k]){
       marks = marks + 5;
       colortoshow = right;
     }
@@ -140,7 +166,7 @@ class _koznaznaState extends State<koznazna> {
         child: MaterialButton(
             onPressed: () => checkanswer(k),
             child: Text(
-              mydata[1][i.toString()][k],
+              mydata[1][j.toString()][k],
               style: Theme
                   .of(context)
                   .textTheme
@@ -165,7 +191,7 @@ class _koznaznaState extends State<koznazna> {
         child: MaterialButton(
             onPressed: () {},
             child: Text(
-              mydata[1][i.toString()][k],
+              mydata[1][j.toString()][k],
               style: Theme
                   .of(context)
                   .textTheme
@@ -233,7 +259,7 @@ class _koznaznaState extends State<koznazna> {
                 padding: EdgeInsets.all(15.0),
                 alignment: Alignment.bottomLeft,
                 child:  Text(
-                  mydata[0][i.toString()],
+                  mydata[0][j.toString()],
                   style: Theme.of(context).textTheme.display1,
                 ),
               ),
@@ -269,6 +295,3 @@ class _koznaznaState extends State<koznazna> {
     );
   }
 }
-
-
-
