@@ -14,6 +14,7 @@ class ko_zna_zna extends StatelessWidget {
     return FutureBuilder(
       future: DefaultAssetBundle.of(context).loadString("assets/koznazna.json"),
       builder: (context, snapshot){
+
         List mydata = json.decode(snapshot.data.toString());
         if(mydata == null){
           return Scaffold(
@@ -130,25 +131,56 @@ class _koznaznaState extends State<koznazna> {
   }
 
   Widget choicebutton(String k){
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        vertical: 10.0,
-        horizontal: 20.0,
-      ),
-      child: MaterialButton(
-          onPressed: () => checkanswer(k),
-          child: Text(
-            mydata[1][i.toString()][k],
-            style: Theme.of(context).textTheme.display2,
-          ),
-          color: btncolor[k],
-          splashColor: QuizColors.secondary.color,
-          highlightColor: Colors.indigo[700],
-          minWidth: 200.0,
-          height: 45.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
-      ),
-    );
+    if(!canceltimer) {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 20.0,
+        ),
+        child: MaterialButton(
+            onPressed: () => checkanswer(k),
+            child: Text(
+              mydata[1][i.toString()][k],
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display2,
+            ),
+            color: btncolor[k],
+            splashColor: QuizColors.secondary.color,
+            highlightColor: Colors.indigo[700],
+            minWidth: 200.0,
+            height: 45.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0))
+        ),
+      );
+    }
+    else{
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 10.0,
+          horizontal: 20.0,
+        ),
+        child: MaterialButton(
+            onPressed: () {},
+            child: Text(
+              mydata[1][i.toString()][k],
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display2,
+            ),
+            color: btncolor[k],
+            splashColor: QuizColors.secondary.color,
+            highlightColor: Colors.indigo[700],
+            minWidth: 200.0,
+            height: 45.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0))
+        ),
+      );
+    }
   }
 
   @override

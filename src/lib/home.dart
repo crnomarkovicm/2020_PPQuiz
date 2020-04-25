@@ -20,6 +20,8 @@ class _homepageState extends State<homepage> {
     "assets/pictures/nesto.jpeg",
   ];
 
+  int marks = 0;
+
   // Nakon splashscreen-a prikazuje se pocetni ekran na kom
   // imamo mogucnost da izaberemo igru. Ovde pravimo jednu
   // karticu na kojoj ce biti ispisan znak ili ime igre kako
