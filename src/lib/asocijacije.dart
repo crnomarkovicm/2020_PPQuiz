@@ -50,6 +50,10 @@ class _asocState extends State<asoc> {
   var mydata;
   _asocState(this.mydata);
 
+  int kol_score = 0;
+  int konacno_score = 30;
+
+
   Widget polje(oznaka){
     return FlipCard(
       direction: FlipDirection.HORIZONTAL,
@@ -63,7 +67,7 @@ class _asocState extends State<asoc> {
             borderRadius:  BorderRadius.circular(100.00),
             child: Container(
               child: Text(
-                oznaka,
+                oznaka[0]+oznaka[1],
                 style: Theme.of(context).textTheme.display2,
                 textAlign: TextAlign.center,
               ),
@@ -97,9 +101,22 @@ class _asocState extends State<asoc> {
     );
 
   }
+
   TextEditingController _textFieldController = TextEditingController();
 
-  Widget kolonaA(){
+  @override
+  void dispose() {
+    _textFieldController.dispose();
+    super.dispose();
+  }
+  void povecaj_score(){
+    kol_score = kol_score - 5;
+    konacno_score = konacno_score + 2;
+
+  }
+
+
+  Widget kolona(ind_kolone){
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 10.0,
@@ -122,11 +139,47 @@ class _asocState extends State<asoc> {
                                   color: Colors.black,
                                   fontSize: 15) ),
                           content: TextField(
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15
+                            ),
                             controller: _textFieldController,
                           ),
                         actions: <Widget>[ FlatButton(
                           child: new Text('OK'),
-                          onPressed: () {},
+                          onPressed: () {
+                            var value = _textFieldController.text;
+                            _textFieldController.clear();
+
+                           if (value == mydata[0][ind_kolone.toString()]){
+                            povecaj_score();
+                            return showDialog(
+                                 context: context,
+                                 builder: (context) {
+                                   return AlertDialog(
+                                     content: Text("Tacno",
+                                       style: TextStyle(
+                                           color: Colors.black,
+                                           fontSize: 15
+                                       ),),
+                                   );
+                                 });
+                           }
+                           else {
+                             return showDialog(
+                                 context: context,
+                                 builder: (context) {
+                                   return AlertDialog(
+                                     content: Text("Netacno",
+                                       style: TextStyle(
+                                           color: Colors.black,
+                                           fontSize: 15
+                                       ),),
+                                   );
+                                 });
+                           }
+
+                          },
 
                         )
                         ],
@@ -135,7 +188,7 @@ class _asocState extends State<asoc> {
                   );
                 },
                 child: Text(
-                  "Resenje kolone A",
+                  "Resenje kolone "+ind_kolone,
                   style: Theme.of(context).textTheme.display2,
                 ),
                 color: QuizColors.secondary.color,
@@ -176,12 +229,46 @@ class _asocState extends State<asoc> {
                                     color: Colors.black,
                                     fontSize: 15) ),
                             content: TextField(
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15
+                              ),
                               controller: _textFieldController,
                             ),
                           actions: <Widget>[ FlatButton(
                             child: new Text('OK'),
-                            onPressed: () {},
+                            onPressed: () {
+                              var value = _textFieldController.text;
+                              _textFieldController.clear();
 
+                              if (value == mydata[0]['B']) {
+                                povecaj_score();
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Tacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                              else {
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Netacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                            },
                           )
                           ],
 
@@ -227,11 +314,47 @@ class _asocState extends State<asoc> {
                                     color: Colors.black,
                                     fontSize: 15) ),
                             content: TextField(
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15
+                              ),
                               controller: _textFieldController,
                             ),
                           actions: <Widget>[ FlatButton(
                             child: new Text('OK'),
-                            onPressed: () {},
+                            onPressed: () {
+
+                              var value = _textFieldController.text;
+                              _textFieldController.clear();
+
+                              if (value == mydata[0]['C']) {
+                                povecaj_score();
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Tacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                              else {
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Netacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                            },
 
                           )
                           ],
@@ -282,11 +405,47 @@ class _asocState extends State<asoc> {
                             color: Colors.black,
                             fontSize: 15) ),
                           content: TextField(
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15
+                            ),
                             controller: _textFieldController,
                           ),
                           actions: <Widget>[ FlatButton(
                             child: new Text('OK'),
-                            onPressed: () {},
+                            onPressed: () {
+
+                              var value = _textFieldController.text;
+                              _textFieldController.clear();
+
+                              if (value == mydata[0]['D']) {
+                                povecaj_score();
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Tacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                              else {
+                                return showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        content: Text("Netacno",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15
+                                          ),),
+                                      );
+                                    });
+                              }
+                            },
 
                           )
                           ],
@@ -364,7 +523,7 @@ class _asocState extends State<asoc> {
             children: [
               Row (
                 children: <Widget>[
-                  kolonaA(),
+                  kolona('A'),
                   kolonaB(),
                 ],
               ),
@@ -378,11 +537,47 @@ class _asocState extends State<asoc> {
                                     color: Colors.black,
                                     fontSize: 15) ),
                             content: TextField(
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15
+                              ),
                               controller: _textFieldController,
                             ),
                           actions: <Widget>[ FlatButton(
                             child: new Text('OK'),
-                      onPressed: () {},
+                      onPressed: () {
+
+                        var value = _textFieldController.text;
+                        _textFieldController.clear();
+
+                        if (value == mydata[0]['E']) {
+
+                          return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  content: Text((konacno_score + kol_score).toString(),
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15
+                                    ),),
+                                );
+                              });
+                        }
+                        else {
+                          return showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  content: Text("Netacno",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15
+                                    ),),
+                                );
+                              });
+                        }
+                      },
 
                         )
                     ]));
