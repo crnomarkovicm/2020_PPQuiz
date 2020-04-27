@@ -1,35 +1,126 @@
 [
   {
-    "A" : "Resenje A",
-    "B" : "Resenje B",
-    "C" : "Resenje C",
-    "D" : "Resenje D",
-    "E" : "Konacno"
+    "A":{
+      "1": "Asoc1 a1",
+      "2": "Asoc1 a2",
+      "3": "Asoc1 a3",
+      "4": "Asoc1 a4",
+      "5": "Resenje1 A"
+    },
+    "B":{
+      "1": "Asoc1 b1",
+      "2": "Asoc1 b2",
+      "3": "Asoc1 b3",
+      "4": "Asoc1 b4",
+      "5": "Resenje1 B"
+    },
+    "C":{
+      "1": "Asoc1 c1",
+      "2": "Asoc1 c2",
+      "3": "Asoc1 c3",
+      "4": "Asoc1 c4",
+      "5": "Resenje1 C"
+    },
+    "D":{
+      "1": "Asoc1 d1",
+      "2": "Asoc1 d2",
+      "3": "Asoc1 d3",
+      "4": "Asoc1 d4",
+      "5": "Resenje1 D"
+    },
+    "E": "Konacno1"
   },
   {
     "A":{
-      "1": "Asoc a1",
-      "2": "Asoc a2",
-      "3": "Asoc a3",
-      "4": "Asoc a4"
+      "1": "Asoc2 a1",
+      "2": "Asoc2 a2",
+      "3": "Asoc2 a3",
+      "4": "Asoc2 a4",
+      "5": "Resenje2 A"
     },
     "B":{
-      "1": "Asoc b1",
-      "2": "Asoc b2",
-      "3": "Asoc b3",
-      "4": "Asoc b4"
+      "1": "Asoc2 b1",
+      "2": "Asoc2 b2",
+      "3": "Asoc2 b3",
+      "4": "Asoc2 b4",
+      "5": "Resenje2 B"
     },
     "C":{
-      "1": "Asoc c1",
-      "2": "Asoc c2",
-      "3": "Asoc c3",
-      "4": "Asoc c4"
+      "1": "Asoc2 c1",
+      "2": "Asoc2 c2",
+      "3": "Asoc2 c3",
+      "4": "Asoc2 c4",
+      "5": "Resenje2 C"
     },
     "D":{
-      "1": "Asoc d1",
-      "2": "Asoc d2",
-      "3": "Asoc d3",
-      "4": "Asoc d4"
-    }
+      "1": "Asoc2 d1",
+      "2": "Asoc2 d2",
+      "3": "Asoc2 d3",
+      "4": "Asoc2 d4",
+      "5": "Resenje2 D"
+    },
+    "E": "Konacno2"
+  },
+  {
+    "A":{
+      "1": "Asoc3 a1",
+      "2": "Asoc3 a2",
+      "3": "Asoc3 a3",
+      "4": "Asoc3 a4",
+      "5": "Resenje3 A"
+    },
+    "B":{
+      "1": "Asoc3 b1",
+      "2": "Asoc3 b2",
+      "3": "Asoc3 b3",
+      "4": "Asoc3 b4",
+      "5": "Resenje3 B"
+    },
+    "C":{
+      "1": "Asoc3 c1",
+      "2": "Asoc3 c2",
+      "3": "Asoc3 c3",
+      "4": "Asoc3 c4",
+      "5": "Resenje3 C"
+    },
+    "D":{
+      "1": "Asoc3 d1",
+      "2": "Asoc3 d2",
+      "3": "Asoc3 d3",
+      "4": "Asoc3 d4",
+      "5": "Resenje3 D"
+    },
+    "E": "Konacno3"
+  },
+  {
+    "A":{
+      "1": "Asoc4 a1",
+      "2": "Asoc4 a2",
+      "3": "Asoc4 a3",
+      "4": "Asoc4 a4",
+      "5": "Resenje4 A"
+    },
+    "B":{
+      "1": "Asoc4 b1",
+      "2": "Asoc4 b2",
+      "3": "Asoc4 b3",
+      "4": "Asoc4 b4",
+      "5": "Resenje4 B"
+    },
+    "C":{
+      "1": "Asoc4 c1",
+      "2": "Asoc4 c2",
+      "3": "Asoc4 c3",
+      "4": "Asoc4 c4",
+      "5": "Resenje4 C"
+    },
+    "D":{
+      "1": "Asoc4 d1",
+      "2": "Asoc4 d2",
+      "3": "Asoc4 d3",
+      "4": "Asoc4 d4",
+      "5": "Resenje4 D"
+    },
+    "E": "Konacno4"
   }
 ]
