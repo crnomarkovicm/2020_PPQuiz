@@ -43,6 +43,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/jezik.json
     - assets/asocijacije.json
     - assets/koznazna.json
     - assets/pictures/pozadina1.jpg

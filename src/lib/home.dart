@@ -5,6 +5,7 @@ import 'package:flip_card/flip_card.dart';
 import 'package:ppquiz/koznazna.dart';
 import 'package:ppquiz/asocijacije.dart';
 import 'dart:io';
+import 'package:ppquiz/pogodiJezik.dart';
 
 
 class homepage extends StatefulWidget {
@@ -97,6 +98,12 @@ class _homepageState extends State<homepage> {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                   builder: (context) => asocijacije(),
+                                ));
+                          }
+                          else if (indikator == "pj"){
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => JezikInfo(),
                                 ));
                           }
                         },
