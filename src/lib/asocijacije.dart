@@ -51,12 +51,20 @@ class _asocState extends State<asoc> {
   var mydata;
   _asocState(this.mydata);
 
-  int kol_score = 0;
-  int konacno_score = 30;
+  int kol_score = 4;
+  int polje_score = 16;
+  int konacno_score = 0;
+  int score = 0;
   var rnd = new Random();
   int i = 0;
   int timer = 120;
   String show_timer = "120";
+
+  bool pogodjenoA = false;
+  bool pogodjenoB = false;
+  bool pogodjenoC = false;
+  bool pogodjenoD = false;
+
 
 
   @override
@@ -71,10 +79,57 @@ class _asocState extends State<asoc> {
     Timer.periodic(sec, (Timer t){
       setState((){
         if(timer < 1){
+          score = konacno_score + kol_score + polje_score;
           t.cancel();
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => homepage()));
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0))
+                  ),
+                  content: Container(
+                      child:Column(
+                          children: <Widget>[
+                            Container(
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(("Nazalost, vreme je isteklo :(\nVas score je: " + score.toString()),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white
+                                  ),
+                                ),
+                              ),
+                              width: 200.0,
+                              height:200.0,),
 
+                            MaterialButton(
+                                onPressed: (){
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                        builder: (context) => asocijacije(),
+                                  ));
+                                },
+                                child:  Text(
+                                  "Igraj ponovo",
+                                  style: Theme.of(context).textTheme.display2,
+                                ),
+                                color: QuizColors.secondary.color,
+                                splashColor: QuizColors.secondary.color,
+                                highlightColor: Colors.indigo[700],
+                                minWidth: 200.0,
+                                height: 50.0,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+                            )
+                          ]
+                      ),
+                      width: 300.00,
+                      height: 300.00,
+                      color: QuizColors.primary.color),
+                );
+              });
         }
         else{
           timer = timer - 1;
@@ -86,7 +141,11 @@ class _asocState extends State<asoc> {
 
 
   Widget polje(kolona,oznaka){
+
     return FlipCard(
+      onFlip: (){
+        polje_score = polje_score - 1;
+      },
       direction: FlipDirection.HORIZONTAL,
       front: Padding(
           padding: EdgeInsets.symmetric(
@@ -140,12 +199,26 @@ class _asocState extends State<asoc> {
   }
 
   void povecaj_score(){
-    kol_score = kol_score - 5;
-    konacno_score = konacno_score + 2;
+    kol_score = kol_score - 1;
+    konacno_score = konacno_score + 10;
   }
 
 
   Widget kolonaG(ind_kolone){
+    String tekst;
+
+    if(ind_kolone == "A"){
+      if(pogodjenoA){
+        tekst = mydata[i]["A"]["5"];
+      }
+      else tekst = "Resenje kolone A" ;
+    }
+    if(ind_kolone == "B"){
+      if(pogodjenoB){
+        tekst = mydata[i]["B"]["5"];
+      }
+      else tekst = "Resenje kolone B" ;
+    }
     return Padding(
         padding: EdgeInsets.symmetric(
           vertical: 3.0,
@@ -182,6 +255,9 @@ class _asocState extends State<asoc> {
 
                               if (value == mydata[i][ind_kolone]["5"]){
                                 povecaj_score();
+                                if(ind_kolone == "A")
+                                  pogodjenoA = true;
+                                else pogodjenoB = true;
                                 return showDialog(
                                     context: context,
                                     builder: (context) {
@@ -220,7 +296,7 @@ class _asocState extends State<asoc> {
                     );
                   },
                   child: Text(
-                    "Resenje kolone "+ind_kolone,
+                    tekst,
                     style: Theme.of(context).textTheme.display2,
                   ),
                   color: QuizColors.secondary.color,
@@ -241,6 +317,20 @@ class _asocState extends State<asoc> {
 
 
   Widget kolonaD(ind_kolone){
+    String tekst;
+
+    if(ind_kolone == "C"){
+      if(pogodjenoC){
+        tekst = mydata[i]["C"]["5"];
+      }
+      else tekst = "Resenje kolone C" ;
+    }
+    if(ind_kolone == "D"){
+      if(pogodjenoD){
+        tekst = mydata[i]["D"]["5"];
+      }
+      else tekst = "Resenje kolone D" ;
+    }
     return Padding(
         padding: EdgeInsets.symmetric(
           vertical: 3.0,
@@ -273,6 +363,9 @@ class _asocState extends State<asoc> {
 
                               if (value == mydata[i][ind_kolone]["5"]){
                                 povecaj_score();
+                                if(ind_kolone == "C")
+                                  pogodjenoC = true;
+                                else pogodjenoD = true;
                                 return showDialog(
                                     context: context,
                                     builder: (context) {
@@ -308,7 +401,7 @@ class _asocState extends State<asoc> {
                     );
                   },
                   child: Text(
-                    "Resenje kolone " + ind_kolone,
+                    tekst,
                     style: Theme.of(context).textTheme.display2,
                   ),
                   color: QuizColors.secondary.color,
@@ -400,21 +493,57 @@ class _asocState extends State<asoc> {
                           actions: <Widget>[ FlatButton(
                             child: new Text('OK'),
                       onPressed: () {
-
                         var value = _textFieldController.text;
                         _textFieldController.clear();
 
                         if (value == mydata[i]['E']) {
-
+                           score = konacno_score + kol_score + polje_score + 30;
                           return showDialog(
                               context: context,
                               builder: (context) {
                                 return AlertDialog(
-                                  content: Text((konacno_score + kol_score).toString(),
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 15
-                                    ),),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(10.0))
+                                    ),
+                                  content: Container(
+                                    child:Column(
+                                    children: <Widget>[
+                                      Container(
+                                        child: Align(
+                                          alignment: Alignment.center,
+                                          child: Text(("Cestitamo, pogodili ste konacno resenje!\nVas score je:  " + score.toString()),
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: 25,
+                                          color: Colors.white
+                                        ),
+                                        ),
+                                        ),
+                                      width: 200.0,
+                                        height:200.0,),
+
+                                      MaterialButton(
+                                          onPressed: (){
+                                            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                              builder: (context) => homepage(),
+                                            ));
+                                          },
+                                          child:  Text(
+                                            "Nastavi",
+                                            style: Theme.of(context).textTheme.display2,
+                                          ),
+                                          color: QuizColors.secondary.color,
+                                          splashColor: QuizColors.secondary.color,
+                                          highlightColor: Colors.indigo[700],
+                                          minWidth: 200.0,
+                                          height: 50.0,
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+                                      )
+                                    ]
+                                  ),
+                                  width: 300.00,
+                                  height: 300.00,
+                                      color: QuizColors.primary.color),
                                 );
                               });
                         }
@@ -461,13 +590,13 @@ class _asocState extends State<asoc> {
                       ));
                     },
                     child:  Text(
-                      show_timer+ " Napusti igru",
+                     "Preostalo vreme: " +  show_timer + "  Napusti igru",
                       style: Theme.of(context).textTheme.display2,
                     ),
                       color: QuizColors.secondary.color,
                       splashColor: QuizColors.secondary.color,
                       highlightColor: Colors.indigo[700],
-                      minWidth: 200.0,
+                      minWidth: 400.0,
                       height: 35.0,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
                   )
