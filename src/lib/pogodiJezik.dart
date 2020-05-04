@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flip_card/flip_card.dart';
-
+import 'dart:async';
 import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,31 +50,102 @@ class _PogodiJezikState extends State<PogodiJezik> {
   var mydata;
   _PogodiJezikState(this.mydata);
 
-  Widget Polje(i){
+  @override
+  void initState(){
+    super.initState();
+  }
+
+  int timer = 60;
+  var show_timer = "60";
+
+  void start(){
+    const sec = Duration(seconds: 1);
+    Timer.periodic(sec, (Timer t){
+      setState((){
+
+        cardKey1.currentState.toggleCard();
+
+        if(timer==50){
+          cardKey2.currentState.toggleCard();
+        }
+
+        if(timer==40){
+          cardKey3.currentState.toggleCard();
+        }
+
+        if (timer > 1)
+            timer = timer - 1;
+        show_timer = timer.toString();
+      }
+      );
+    });
+  }
+
+  GlobalKey<FlipCardState> cardKey1 = GlobalKey<FlipCardState>();
+  GlobalKey<FlipCardState> cardKey2 = GlobalKey<FlipCardState>();
+  GlobalKey<FlipCardState> cardKey3 = GlobalKey<FlipCardState>();
+  GlobalKey<FlipCardState> cardKey4 = GlobalKey<FlipCardState>();
+  GlobalKey<FlipCardState> cardKey5 = GlobalKey<FlipCardState>();
+
+  Widget Polje(broj,tekst,key){
+
+    var hint = broj.toString() + ". Hint";
+
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: 10.0,
+        vertical: 5.0,
         horizontal: 20.0,
       ),
-      child: MaterialButton(
-          onPressed: () {},
-          child: Text(
-            'Ovo je neki tekst',
-            style: Theme
-                .of(context)
-                .textTheme
-                .display2,
-          ),
-          color: Theme.of(context).primaryColor,
-          splashColor: QuizColors.secondary.color,
-          highlightColor: Colors.indigo[700],
-          minWidth: 450.0,
-          height: 60.0,
-          shape: BeveledRectangleBorder(
-            side: BorderSide(
-              color: Colors.indigo[700]
+      child: FlipCard(
+        flipOnTouch: false,
+        key: key,
+        direction: FlipDirection.HORIZONTAL,
+        back: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 5.0,
+              horizontal: 5.0,
+            ),
+            child: Material(
+              elevation: 5.0,
+              borderRadius:  BorderRadius.circular(100.00),
+              child: Container(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    tekst,
+                    style: Theme.of(context).textTheme.display1,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                color: QuizColors.primary.color,
+                width: 350.0,
+                height: 50.0,
+              ),
             )
-          )
+        ),
+        front: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 8.0,
+              horizontal: 5.0,
+            ),
+            child: Material(
+              elevation: 5.0,
+              borderRadius:  BorderRadius.circular(100.00),
+              child: Container(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    hint,
+                    style: Theme.of(context).textTheme.display1,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                color: QuizColors.primary.color,
+                width: 350.0,
+                height: 50.0,
+              ),
+            )
+        ),
       ),
     );
   }
@@ -123,47 +194,87 @@ class _PogodiJezikState extends State<PogodiJezik> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            Flexible(
+            Center(
               child: Container(
-                width: 100,
-                height: 80,
-              ),
-              flex: 2,
+                margin: EdgeInsets.only(
+                  top: 50,
+                  bottom: 10
+                ),
+                child: MaterialButton(
+                  height: 50,
+                  minWidth: 100,
+                  color: Colors.black,
+                  disabledColor: Colors.black,
+
+                  // TODO -> funkcija koja ce na timer da toggluje
+
+                  onPressed: () => start(),
+                  child: Text(
+                    'Zapocni Igru!',
+                    style: Theme.of(context).textTheme.display2,
+                  ),
+                ),
+              )
             ),
+//            Flexible(
+//              child: Container(
+//                width: 100,
+//                height: 80,
+//              ),
+//              flex: 2,
+//            ),
             Center(
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Polje(1),
-                    Polje(2),
-                    Polje(3),
-                    Polje(4),
-                    Polje(5)
+                    Polje(1,mydata[0]["P"]["1"].toString(),cardKey1),
+                    Polje(2,mydata[0]["P"]["2"].toString(),cardKey2),
+                    Polje(3,mydata[0]["P"]["3"].toString(),cardKey3),
+                    Polje(4,mydata[0]["P"]["4"].toString(),cardKey4),
+                    Polje(5,mydata[0]["P"]["5"].toString(),cardKey5)
                   ],
                 ),
               ),
             ),
-            Expanded(
-              flex: 6,
-              child: Container(
-                margin: EdgeInsets.only(
-                  top: 60
-                ),
-                width: 300,
-                height: 80,
-                child: TextField(
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.body1,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.indigo[700],
-                        width: 2
-                      )
-                    )
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 10
+                    ),
+                    width: 300,
+                    height: 30,
+                    child: Text(
+                      'Unesite resenje:',
+                      style: Theme.of(context).textTheme.display1,
+                    ),
+              ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: 20
+                    ),
+                    width: 300,
+                    height: 80,
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.body1,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.indigo[700],
+                                  width: 2
+                              )
+                          )
+                      ),
+                    ),
                   ),
-                ),
+                  Text(
+                    "vreme: " + show_timer,
+                    style: Theme.of(context).textTheme.display1,
+                  )
+                ],
               )
             )
 

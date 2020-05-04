@@ -1,8 +1,17 @@
 [
   {
-    "Python":{
+    "P":{
       "1": "Nazvan po zmiji",
       "2": "Ne znamo zasto po zmiji jos",
+      "3": "Treci trag je ovo",
+      "4": "Moze jos jedan trag",
+      "5": "SSsssSSSssssSSSsssSSS"
+    }
+  },
+  {
+    "J":{
+      "1": "Nazvan po kafi",
+      "2": "Ne znamo zasto po kafi jos",
       "3": "Treci trag je ovo",
       "4": "Moze jos jedan trag",
       "5": "SSsssSSSssssSSSsssSSS"
