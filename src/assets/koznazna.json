@@ -1,15 +1,15 @@
 [
   {
-    "1" : "Prvo pitanje?",
+    "1" : "Ko je autor programskog jezika Python?",
     "2" : "Drugo pitanje?",
     "3" : "Trece pitanje?"
   },
   {
     "1": {
-      "a": "1.",
-      "b": "2.",
-      "c": "3.",
-      "d": "4."
+      "a": "Aleksandar Milosevic",
+      "b": "Guido van Rossum",
+      "c": "Maja Crnomarkovic",
+      "d": "Marko Babic"
     },
     "2": {
       "a": "prvo",
@@ -25,7 +25,7 @@
     }
   },
   {
-    "1": "1.",
+    "1": "Guido van Rossum",
     "2": "trece",
     "3": "odg 2"
   }
