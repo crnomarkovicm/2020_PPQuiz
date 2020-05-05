@@ -5,6 +5,8 @@ import 'ui/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'home.dart';
+import 'dart:math';
 
 class JezikInfo extends StatelessWidget {
 
@@ -50,35 +52,124 @@ class _PogodiJezikState extends State<PogodiJezik> {
   var mydata;
   _PogodiJezikState(this.mydata);
 
+  int i = 0;
+  var rnd = new Random();
+
+
+  int timer = 60;
+
+  var izadji = false;
+
   @override
   void initState(){
+
+    var izadji = false;
+    int timer = 60;
+    i = rnd.nextInt(2);
     super.initState();
   }
 
-  int timer = 60;
   var show_timer = "60";
+  var prva_karta = false;
+  var igra_se = false;
 
   void start(){
-    const sec = Duration(seconds: 1);
-    Timer.periodic(sec, (Timer t){
-      setState((){
+    if(!igra_se) {
+      igra_se = true;
+      const sec = Duration(seconds: 1);
+      Timer.periodic(sec, (Timer t) {
 
-        cardKey1.currentState.toggleCard();
-
-        if(timer==50){
-          cardKey2.currentState.toggleCard();
+        if(izadji){
+          // TODO -> cancel timer
         }
+        setState(() {
+          if (timer < 1) {
+            timer = 60;
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))
+                    ),
+                    content: Container(
+                        child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    ("Nazalost, vreme je isteklo :(\nNiste pogodili jezik"),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 25,
+                                        color: Colors.white
+                                    ),
+                                  ),
+                                ),
+                                width: 200.0,
+                                height: 200.0,),
 
-        if(timer==40){
-          cardKey3.currentState.toggleCard();
-        }
+                              MaterialButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (context) => JezikInfo(),
+                                        ));
+                                  },
+                                  child: Text(
+                                    "Igraj ponovo",
+                                    style: Theme
+                                        .of(context)
+                                        .textTheme
+                                        .display2,
+                                  ),
+                                  color: QuizColors.secondary.color,
+                                  splashColor: QuizColors.secondary.color,
+                                  highlightColor: Colors.indigo[700],
+                                  minWidth: 200.0,
+                                  height: 50.0,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0))
+                              )
+                            ]
+                        ),
+                        width: 300.00,
+                        height: 300.00,
+                        color: QuizColors.primary.color),
+                  );
+                });
+          }
 
-        if (timer > 1)
+
+          if (!prva_karta)
+            cardKey1.currentState.toggleCard();
+
+          prva_karta = true;
+
+          if (timer == 50) {
+            cardKey2.currentState.toggleCard();
+          }
+
+          if (timer == 40) {
+            cardKey3.currentState.toggleCard();
+          }
+
+          if (timer == 30) {
+            cardKey4.currentState.toggleCard();
+          }
+
+          if (timer == 20) {
+            cardKey5.currentState.toggleCard();
+          }
+
+          if (timer >= 1)
             timer = timer - 1;
-        show_timer = timer.toString();
-      }
-      );
-    });
+          show_timer = timer.toString();
+        }
+        );
+      });
+    }
   }
 
   GlobalKey<FlipCardState> cardKey1 = GlobalKey<FlipCardState>();
@@ -152,6 +243,14 @@ class _PogodiJezikState extends State<PogodiJezik> {
 
   @override
   Widget build(BuildContext context) {
+
+    var a;
+
+    if(i==0){
+      a='P';
+    }
+    else a = 'J';
+
     return WillPopScope(
       onWillPop: (){
         return showDialog(
@@ -200,39 +299,56 @@ class _PogodiJezikState extends State<PogodiJezik> {
                   top: 50,
                   bottom: 10
                 ),
-                child: MaterialButton(
-                  height: 50,
-                  minWidth: 100,
-                  color: Colors.black,
-                  disabledColor: Colors.black,
-
-                  // TODO -> funkcija koja ce na timer da toggluje
-
-                  onPressed: () => start(),
-                  child: Text(
-                    'Zapocni Igru!',
-                    style: Theme.of(context).textTheme.display2,
-                  ),
-                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        height: 50,
+                        minWidth: 100,
+                        color: Colors.black,
+                        disabledColor: Colors.black,
+                        onPressed: () => start(),
+                        child: Text(
+                          'Zapocni Igru!',
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        height: 50,
+                        minWidth: 100,
+                        color: Colors.black,
+                        disabledColor: Colors.black,
+                        onPressed: () => {
+                          Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                          builder: (context) => homepage(),
+                        ))
+                        },
+                        child: Text(
+                          'Napusti Igru!',
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               )
             ),
-//            Flexible(
-//              child: Container(
-//                width: 100,
-//                height: 80,
-//              ),
-//              flex: 2,
-//            ),
             Center(
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Polje(1,mydata[0]["P"]["1"].toString(),cardKey1),
-                    Polje(2,mydata[0]["P"]["2"].toString(),cardKey2),
-                    Polje(3,mydata[0]["P"]["3"].toString(),cardKey3),
-                    Polje(4,mydata[0]["P"]["4"].toString(),cardKey4),
-                    Polje(5,mydata[0]["P"]["5"].toString(),cardKey5)
+                    Polje(1,mydata[i][a]["1"].toString(),cardKey1),
+                    Polje(2,mydata[i][a]["2"].toString(),cardKey2),
+                    Polje(3,mydata[i][a]["3"].toString(),cardKey3),
+                    Polje(4,mydata[i][a]["4"].toString(),cardKey4),
+                    Polje(5,mydata[i][a]["5"].toString(),cardKey5)
                   ],
                 ),
               ),
