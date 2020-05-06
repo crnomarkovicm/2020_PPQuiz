@@ -23,11 +23,11 @@ class _koznazna_scoreState extends State<koznazna_score> {
 
   @override
   void initState(){
-    if(marks < 5){
+    if(marks < 20){
       message = "Vise srece sledeci put...";
       image = images[1];
     }
-    else if(marks < 10){
+    else if(marks < 35){
       message = "Mozes ti to i bolje....";
       image = images[2];
     }

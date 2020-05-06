@@ -1,32 +1,88 @@
 [
   {
     "1" : "Ko je autor programskog jezika Python?",
-    "2" : "Drugo pitanje?",
-    "3" : "Trece pitanje?"
+    "2" : "Najopstija podela programskih paradigmi je na:",
+    "3" : "Za koji od navedenih jezika ne kazemo da je skript jezik?",
+    "4" : "Za koji od navedenih jezika ne kazemo da je skript jezik skracenog zapisa?",
+    "5" : "Koji od navedenih programskih jezika je staticki tipiziran?",
+    "6" : "Haskell interpreter je:",
+    "7" : "Haskell kod pisemo u datoteci sa ekstenzijom:",
+    "8" : "Python kod pisemo u datoteci sa ekstenzijom:",
+    "9" : "Domen funkcije faktorijel u Haskell-u (sintaksa: \"promenljiva!\") su:",
+    "10" : "Koji od narednih programskih jezika je dinamicki tipiziran?"
   },
   {
     "1": {
-      "a": "Aleksandar Milosevic",
+      "a": "Denis Richie",
       "b": "Guido van Rossum",
-      "c": "Maja Crnomarkovic",
-      "d": "Marko Babic"
+      "c": "Linus Torvalds",
+      "d": "Maja Crnomarkovic"
     },
     "2": {
-      "a": "prvo",
-      "b": "drugo",
-      "c": "trece",
-      "d": "cetvrto"
+      "a": "proceduralnu i deklarativnu",
+      "b": "proceduralnu i imperativnu",
+      "c": "imperativnu i skript",
+      "d": "imperativnu i objektno-orijentisanu"
     },
     "3": {
-      "a": "odg 1",
-      "b": "odg 2",
-      "c": "odg 3",
-      "d": "odg 4"
+      "a": "Python",
+      "b": "Java",
+      "c": "Dart",
+      "d": "C"
+    },
+    "4": {
+      "a": "Python",
+      "b": "Java",
+      "c": "Perl",
+      "d": "Ruby"
+    },
+    "5": {
+      "a": "Prolog",
+      "b": "Python",
+      "c": "Haskell",
+      "d": "Dart"
+    },
+    "6": {
+      "a": "ghc",
+      "b": "ghci",
+      "c": "ghch",
+      "d": "gh"
+    },
+    "7": {
+      "a": ".hs",
+      "b": ".h",
+      "c": ".ha",
+      "d": ".hl"
+    },
+    "8": {
+      "a": ".pt",
+      "b": ".ph",
+      "c": ".py",
+      "d": ".p"
+    },
+    "9": {
+      "a": "realni brojevi",
+      "b": "prirodni brojevi",
+      "c": "celi brojevi",
+      "d": "iracionalni brojevi"
+    },
+    "10": {
+      "a": "Python",
+      "b": "Java",
+      "c": "C",
+      "d": "Haskell"
     }
   },
   {
     "1": "Guido van Rossum",
-    "2": "trece",
-    "3": "odg 2"
+    "2": "proceduralnu i deklarativnu",
+    "3": "C",
+    "4": "Java",
+    "5": "Haskell",
+    "6": "ghci",
+    "7": ".hs",
+    "8": ".py",
+    "9": "prirodni brojevi",
+    "10": "Python"
   }
 ]
