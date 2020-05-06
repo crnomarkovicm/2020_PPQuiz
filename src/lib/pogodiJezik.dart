@@ -55,6 +55,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
   int i = 0;
   var rnd = new Random();
 
+  TextEditingController _textFieldController = TextEditingController();
 
   int timer = 60;
 
@@ -77,13 +78,11 @@ class _PogodiJezikState extends State<PogodiJezik> {
     if(!igra_se) {
       igra_se = true;
       const sec = Duration(seconds: 1);
-      Timer.periodic(sec, (Timer t) {
+      var t = Timer.periodic(sec, (Timer t) {
 
-        if(izadji){
-          // TODO -> cancel timer
-        }
         setState(() {
           if (timer < 1) {
+            t.cancel();
             timer = 60;
             showDialog(
                 context: context,
@@ -168,7 +167,14 @@ class _PogodiJezikState extends State<PogodiJezik> {
           show_timer = timer.toString();
         }
         );
+        if(izadji){
+          t.cancel();
+        }
       });
+      if(izadji){
+        t.cancel();
+      }
+
     }
   }
 
@@ -177,6 +183,18 @@ class _PogodiJezikState extends State<PogodiJezik> {
   GlobalKey<FlipCardState> cardKey3 = GlobalKey<FlipCardState>();
   GlobalKey<FlipCardState> cardKey4 = GlobalKey<FlipCardState>();
   GlobalKey<FlipCardState> cardKey5 = GlobalKey<FlipCardState>();
+
+  void izadjiX(){
+    setState(() {
+      izadji = true;
+    });
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+        builder: (context) => homepage()
+        )
+    );
+
+  }
 
   Widget Polje(broj,tekst,key){
 
@@ -242,6 +260,13 @@ class _PogodiJezikState extends State<PogodiJezik> {
   }
 
   @override
+  void dispose(){
+    _textFieldController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
 
     var a;
@@ -291,6 +316,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
         );
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: <Widget>[
             Center(
@@ -323,12 +349,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
                         minWidth: 100,
                         color: Colors.black,
                         disabledColor: Colors.black,
-                        onPressed: () => {
-                          Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                          builder: (context) => homepage(),
-                        ))
-                        },
+                        onPressed: () => izadjiX(),
                         child: Text(
                           'Napusti Igru!',
                           style: Theme.of(context).textTheme.display2,
@@ -373,17 +394,109 @@ class _PogodiJezikState extends State<PogodiJezik> {
                     ),
                     width: 300,
                     height: 80,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.body1,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.indigo[700],
-                                  width: 2
+                    child: MaterialButton(
+                        onPressed: (){
+                          return showDialog(
+                              context: context,
+                              builder:  (context) => AlertDialog(
+                                title:Text("Unesite resenje :",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 15) ),
+                                content: TextField(
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15
+                                  ),
+                                  controller: _textFieldController,
+                                ),
+                                actions: <Widget>[ FlatButton(
+                                  child: new Text('OK'),
+                                  onPressed: () {
+                                    var value = _textFieldController.text;
+                                    _textFieldController.clear();
+
+                                    if (value == mydata[i][a]["6"]){
+                                      int score = timer~/3;
+                                      return showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              content: Container(
+                                                  child:Column(
+                                                      children: <Widget>[
+                                                        Container(
+                                                          child: Align(
+                                                            alignment: Alignment.center,
+                                                            child: Text(("Cestitamo, pogodili ste konacno resenje!\nVas score je:  " + score.toString()),
+                                                              textAlign: TextAlign.center,
+                                                              style: TextStyle(
+                                                                  fontSize: 25,
+                                                                  color: Colors.white
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          width: 200.0,
+                                                          height:200.0,),
+
+                                                        MaterialButton(
+                                                            onPressed: (){
+                                                              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                                                builder: (context) => homepage(),
+                                                              ));
+                                                            },
+                                                            child:  Text(
+                                                              "Nastavi",
+                                                              style: Theme.of(context).textTheme.display2,
+                                                            ),
+                                                            color: QuizColors.secondary.color,
+                                                            splashColor: QuizColors.secondary.color,
+                                                            highlightColor: Colors.indigo[700],
+                                                            minWidth: 200.0,
+                                                            height: 50.0,
+                                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
+                                                        )
+                                                      ]
+                                                  ),
+                                                  width: 300.00,
+                                                  height: 300.00,
+                                                  color: QuizColors.primary.color
+                                              ),
+                                            );
+                                          });
+                                    }
+                                    else {
+                                      return showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              content: Text("Netacno",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15
+                                                ),),
+                                            );
+                                          });
+                                    }
+
+                                  },
+
+                                )
+                                ],
+
                               )
-                          )
-                      ),
+                          );
+                        },
+                        child: Text(
+                          'Koji je ovo jezik???',
+                          style: Theme.of(context).textTheme.display2,
+                        ),
+                        color: QuizColors.secondary.color,
+                        splashColor: QuizColors.secondary.color,
+                        highlightColor: Colors.indigo[700],
+                        minWidth: 200.0,
+                        height: 37.0,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
                     ),
                   ),
                   Text(
