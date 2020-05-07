@@ -60,6 +60,7 @@ class _koznaznaState extends State<koznazna> {
   int j = 0;
   int timer = 10;
   String showtimer = "10";
+  bool kraj = false;
 
   Map<String, Color> btncolor = {
     "a": Colors.indigoAccent,
@@ -75,6 +76,7 @@ class _koznaznaState extends State<koznazna> {
 
   @override
   void initState(){
+    kraj = false;
     j = rng.nextInt(11);
     while(j == 0)
       j = rng.nextInt(11);
@@ -85,21 +87,23 @@ class _koznaznaState extends State<koznazna> {
 
   void starttimer() async {
     const onesec = Duration(seconds: 1);
-    Timer.periodic(onesec, (Timer t){
-      setState(() {
-        if(timer < 1){
-          t.cancel();
-          nextquestion();
-        }
-        else if(canceltimer){
-          t.cancel();
-        }
-        else{
-          timer = timer - 1;
-        }
-        showtimer = timer.toString();
+    if(!kraj) {
+      Timer.periodic(onesec, (Timer t) {
+        setState(() {
+          if (timer < 1) {
+            t.cancel();
+            nextquestion();
+          }
+          else if (canceltimer) {
+            t.cancel();
+          }
+          else {
+            timer = timer - 1;
+          }
+          showtimer = timer.toString();
+        });
       });
-    });
+    }
   }
 
   void nextquestion(){
@@ -116,9 +120,11 @@ class _koznaznaState extends State<koznazna> {
         lista.add(j);
       }
       else{
+        kraj = true;
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => koznazna_score(marks: marks),
         ));
+
       }
       btncolor["a"] = Colors.indigoAccent;
       btncolor["b"] = Colors.indigoAccent;
