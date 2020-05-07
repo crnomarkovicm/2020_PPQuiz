@@ -8,12 +8,72 @@
     "6" : "Haskell interpreter je:",
     "7" : "Haskell kod pisemo u datoteci sa ekstenzijom:",
     "8" : "Python kod pisemo u datoteci sa ekstenzijom:",
-    "9" : "Domen funkcije faktorijel u Haskell-u (sintaksa: \"promenljiva!\") su:",
-    "10" : "Koji od narednih programskih jezika je dinamicki tipiziran?"
+    "9" : "Domen funkcije faktorijel u Haskell-u su:\n(sintaksa: \"n!\")",
+    "10" : "Koji od narednih programskih jezika je dinamicki tipiziran?",
+    "11" : "Koji od navedenih programskih jezika nije cist funkcionalni programski jezik?",
+    "12" : "Kod kog od navedenih programskih jezika je neophodno navodjenje tipova?",
+    "13" : "Za koji od navedenih jezika kazemo da je slabo tipiziran?",
+    "14" : "Ko je uveo lambda racun?",
+    "15" : "U kom od navedenih operativnih sistema nije podrzan koncept niti?",
+    "16" : "Koji programski jezik je zvanicno prvi logicki programski jezik?",
+    "17" : "Koji od navedenih programskih jezika je logicki programski jezik?",
+    "18" : "Koji od navedenih programskih jezika nije logicki programski jezik?",
+    "19" : "Koja programska paradigma je nastala kao jedna od posledica softverske krize?",
+    "20" : "Koji od narednih jezika nije objektno orijentisan?",
+    "21" : "Koja je onovna paradigma programskog jezika Erlang?",
+    "22" : "Koja je onovna paradigma programskog jezika Elixir?",
+    "23" : "Koja je onovna paradigma programskog jezika Perl?",
+    "24" : "Koja je onovna paradigma programskog jezika Lua?",
+    "25" : "Koja je onovna paradigma programskog jezika PHP?",
+    "26" : "Koja je onovna paradigma programskog jezika Ruby?",
+    "27" : "Koja je onovna paradigma programskog jezika Swift?",
+    "28" : "Koja je onovna paradigma programskog jezika F#?",
+    "29" : "Koja je onovna paradigma programskog jezika GO?",
+    "30" : "Koja je onovna paradigma programskog jezika Kotlin?",
+    "31" : "Koja je onovna paradigma programskog jezika Clojure?",
+    "32" : "Koja je onovna paradigma programskog jezika Haskell?",
+    "33" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "34" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "35" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "36" : "Kom od navedenih jezika je osnovna paradigma imperativna?",
+    "37" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "38" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "39" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "40" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "41" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "42" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "43" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "44" : "Koji programski jezik je nastao iz eksperimentisanja dodavanja konkurentnosti u Prolog?",
+    "45" : "Za koji programski jezik kazemo da su mu prethodnici DEL i SQL, a jezici Modula i Perl su uticali na njegov razvoj?",
+    "46" : "Koji jezik u sebi kombinuje sintaksu jezika Perl i Ada, sa objektno orijentisanim osobinama nalik jeziku Smalltalk?",
+    "47" : "Ko je autor programskog jezika Ruby?",
+    "48" : "Koji od navedenih jezika je dinamicki tipiziran?",
+    "49" : "Koji od navedenih jezika je dinamicki tipiziran?",
+    "50" : "Koji od navedenih jezika je staticki tipiziran?",
+    "51" : "Koji od navedenih jezika je staticki tipiziran?",
+    "52" : "Koji od navedenih jezika je jako tipiziran?",
+    "53" : "Koji od navedenih jezika je slabo tipiziran?",
+    "54" : "Koji od navedenih jezika je jako tipiziran?",
+    "55" : "Koji od navedenih jezika je slabo tipiziran?",
+    "56" : "Za programski jezik C moze se reci da je:",
+    "57" : "Za programski jezik C++ moze se reci da je:",
+    "58" : "Za programski jezik Haskell moze se reci da je:",
+    "59" : "Za programski jezik Python moze se reci da je:",
+    "60" : "Za programski jezik Scala moze se reci da je:",
+    "61" : "Za programski jezik Java moze se reci da je:",
+    "62" : "U kom programskom jeziku su implementirani GitHub i Airbnb?",
+    "63" : "Koji programski jezik koristi IMDb?",
+    "64" : "Koja velika kompanija je originalno razvila programski jezik Dart?",
+    "65" : "Na kom programskom jeziku je, pored C-a i C++-a, zasnovan Apple-ov macOS?",
+    "66" : "Koji od navedenih programskih jezika je nazvan po francuskom matematicaru i filozofu?",
+    "67" : "Za programski jezik JavaScript moze se reci da je:",
+    "68" : "Koja kompanija je razvila programski jezik Java?",
+    "69" : "Programski jezik Python je nazvan po:",
+    "70" : "Ko je autor programskog jezika C?"
   },
   {
     "1": {
-      "a": "Denis Richie",
+      "a": "Dennis Ritchie",
       "b": "Guido van Rossum",
       "c": "Linus Torvalds",
       "d": "Maja Crnomarkovic"
@@ -71,6 +131,366 @@
       "b": "Java",
       "c": "C",
       "d": "Haskell"
+    },
+    "11": {
+      "a": "Haskell",
+      "b": "Clean",
+      "c": "Miranda",
+      "d": "C++"
+    },
+    "12": {
+      "a": "Python",
+      "b": "Haskell",
+      "c": "C",
+      "d": "Scala"
+    },
+    "13": {
+      "a": "Python",
+      "b": "Java",
+      "c": "Haskell",
+      "d": "C#"
+    },
+    "14": {
+      "a": "Alonzo Church",
+      "b": "John von Neumann",
+      "c": "Alan Turing",
+      "d": "Brian Kernighan"
+    },
+    "15": {
+      "a": "Linux",
+      "b": "Mac OS X",
+      "c": "Windows Vista",
+      "d": "Podrzan je u svakom od navedenih!"
+    },
+    "16": {
+      "a": "Fortran",
+      "b": "Prolog",
+      "c": "C",
+      "d": "ABSYS(Aberdeen SYStem)"
+    },
+    "17": {
+      "a": "Prolog",
+      "b": "Java",
+      "c": "Haskell",
+      "d": "Scalla"
+    },
+    "18": {
+      "a": "Prolog",
+      "b": "ASP",
+      "c": "Datalog",
+      "d": "Python"
+    },
+    "19": {
+      "a": "Logicka",
+      "b": "Funkcionalna",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "20": {
+      "a": "C++",
+      "b": "C#",
+      "c": "Python",
+      "d": "Haskell"
+    },
+    "21": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "22": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "23": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "24": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "25": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "26": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "27": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "28": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "29": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "30": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "31": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "32": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "33": {
+      "a": "Perl",
+      "b": "Swift",
+      "c": "Kotlin",
+      "d": "Erlang"
+    },
+    "34": {
+      "a": "PHP",
+      "b": "GO",
+      "c": "F#",
+      "d": "Ruby"
+    },
+    "35": {
+      "a": "PHP",
+      "b": "Ruby",
+      "c": "Kotlin",
+      "d": "Elixir"
+    },
+    "36": {
+      "a": "Erlang",
+      "b": "F#",
+      "c": "PHP",
+      "d": "GO"
+    },
+    "37": {
+      "a": "Erlang",
+      "b": "Perl",
+      "c": "GO",
+      "d": "Kotlin"
+    },
+    "38": {
+      "a": "Ruby",
+      "b": "F#",
+      "c": "Haskell",
+      "d": "Kotlin"
+    },
+    "39": {
+      "a": "Erlang",
+      "b": "Haskell",
+      "c": "GO",
+      "d": "PHP"
+    },
+    "40": {
+      "a": "Ruby",
+      "b": "Erlang",
+      "c": "GO",
+      "d": "Java"
+    },
+    "41": {
+      "a": "Clojure",
+      "b": "Haskell",
+      "c": "Kotlin",
+      "d": "GO"
+    },
+    "42": {
+      "a": "Perl",
+      "b": "Lua",
+      "c": "PHP",
+      "d": "Swift"
+    },
+    "43": {
+      "a": "Swift",
+      "b": "Haskell",
+      "c": "Python",
+      "d": "Java"
+    },
+    "44": {
+      "a": "Swift",
+      "b": "Haskell",
+      "c": "Erlang",
+      "d": "Java"
+    },
+    "45": {
+      "a": "Swift",
+      "b": "Haskell",
+      "c": "Erlang",
+      "d": "Lua"
+    },
+    "46": {
+      "a": "Ruby",
+      "b": "Haskell",
+      "c": "Erlang",
+      "d": "Java"
+    },
+    "47": {
+      "a": "Dennis Ritchie",
+      "b": "Guido van Rossum",
+      "c": "Linus Torvalds",
+      "d": "Jukihiro Macumoto"
+    },
+    "48": {
+      "a": "Swift",
+      "b": "C",
+      "c": "Erlang",
+      "d": "Kotlin"
+    },
+    "49": {
+      "a": "Ruby",
+      "b": "F#",
+      "c": "Swift",
+      "d": "GO"
+    },
+    "50": {
+      "a": "Ruby",
+      "b": "Perl",
+      "c": "Erlang",
+      "d": "GO"
+    },
+    "51": {
+      "a": "Ruby",
+      "b": "PHP",
+      "c": "Kotlin",
+      "d": "Perl"
+    },
+    "52": {
+      "a": "F#",
+      "b": "PHP",
+      "c": "C",
+      "d": "Perl"
+    },
+    "53": {
+      "a": "PHP",
+      "b": "Erlang",
+      "c": "Objective-C",
+      "d": "Perl"
+    },
+    "54": {
+      "a": "Ruby",
+      "b": "Swift",
+      "c": "PHP",
+      "d": "GO"
+    },
+    "55": {
+      "a": "GO",
+      "b": "Ruby",
+      "c": "Kotlin",
+      "d": "Perl"
+    },
+    "56": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "57": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "58": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "59": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "60": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "61": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "62": {
+      "a": "Ruby",
+      "b": "Perl",
+      "c": "C++",
+      "d": "Java"
+    },
+    "63": {
+      "a": "Swift",
+      "b": "Perl",
+      "c": "F#",
+      "d": "GO"
+    },
+    "64": {
+      "a": "Microsoft",
+      "b": "Apple",
+      "c": "Google",
+      "d": "IBM"
+    },
+    "65": {
+      "a": "Java",
+      "b": "C#",
+      "c": "Kotlin",
+      "d": "Objective-C"
+    },
+    "66": {
+      "a": "Pascal",
+      "b": "Prolog",
+      "c": "Python",
+      "d": "Ruby"
+    },
+    "67": {
+      "a": "Dinamicki, jako tipiziran",
+      "b": "Dinamicki, slabo tipiziran",
+      "c": "Staticki, jako tipiziran",
+      "d": "Staticki, slabo tipiziran"
+    },
+    "68": {
+      "a": "Google",
+      "b": "Microsoft",
+      "c": "Sun Microsystem",
+      "d": "IBM"
+    },
+    "69": {
+      "a": "Zmiji",
+      "b": "Ribi",
+      "c": "Likovima iz britanske komedije",
+      "d": "Ptici"
+    },
+    "70": {
+      "a": "Linus Torvalds",
+      "b": "John fon Neumann",
+      "c": "Dennis Ritchie",
+      "d": "Alan Turing"
     }
   },
   {
@@ -83,6 +503,66 @@
     "7": ".hs",
     "8": ".py",
     "9": "prirodni brojevi",
-    "10": "Python"
+    "10": "Python",
+    "11": "C++",
+    "12": "C",
+    "13": "C#",
+    "14": "Alonzo Church",
+    "15": "Podrzan je u svakom od navedenih!",
+    "16": "ABSYS(Aberdeen SYStem)",
+    "17": "Prolog",
+    "18": "Python",
+    "19": "Objektno orijentisana",
+    "20": "Haskell",
+    "21": "Funkcionalna",
+    "22": "Funkcionalna",
+    "23": "Skript",
+    "24": "Skript",
+    "25": "Skript",
+    "26": "Skript",
+    "27": "Objektno orijentisana",
+    "28": "Funkcionalna",
+    "29": "Imperativna",
+    "30": "Objektno orijentisana",
+    "31": "Funkcionalna",
+    "32": "Funkcionalna",
+    "33": "Erlang",
+    "34": "F#",
+    "35": "Elixir",
+    "36": "GO",
+    "37": "Perl",
+    "38": "Ruby",
+    "39": "PHP",
+    "40": "Java",
+    "41": "Kotlin",
+    "42": "Swift",
+    "43": "Haskell",
+    "44": "Erlang",
+    "45": "Lua",
+    "46": "Ruby",
+    "47": "Jukihiro Macumoto",
+    "48": "Erlang",
+    "49": "Ruby",
+    "50": "GO",
+    "51": "Kotlin",
+    "52": "F#",
+    "53": "Erlang",
+    "54": "PHP",
+    "55": "Perl",
+    "56": "Staticki, slabo tipiziran",
+    "57": "Staticki, slabo tipiziran",
+    "58": "Staticki, jako tipiziran",
+    "59": "Dinamicki, jako tipiziran",
+    "60": "Staticki, jako tipiziran",
+    "61": "Staticki, jako tipiziran",
+    "62" : "Ruby",
+    "63" : "Perl",
+    "64" : "Google",
+    "65" : "Objective-C",
+    "66" : "Pascal",
+    "67" : "Dinamicki, slabo tipiziran",
+    "68" : "Sun Microsystem",
+    "69" : "Likovima iz britanske komedije",
+    "70" : "Dennis Ritchie"
   }
 ]

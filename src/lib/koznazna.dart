@@ -60,6 +60,7 @@ class _koznaznaState extends State<koznazna> {
   int j = 0;
   int timer = 10;
   String showtimer = "10";
+  bool kraj = false;
 
   Map<String, Color> btncolor = {
     "a": Colors.indigoAccent,
@@ -75,9 +76,10 @@ class _koznaznaState extends State<koznazna> {
 
   @override
   void initState(){
-    j = rng.nextInt(11);
+    kraj = false;
+    j = rng.nextInt(71);
     while(j == 0)
-      j = rng.nextInt(11);
+      j = rng.nextInt(71);
     lista.add(j);
     starttimer();
     super.initState();
@@ -85,21 +87,23 @@ class _koznaznaState extends State<koznazna> {
 
   void starttimer() async {
     const onesec = Duration(seconds: 1);
-    Timer.periodic(onesec, (Timer t){
-      setState(() {
-        if(timer < 1){
-          t.cancel();
-          nextquestion();
-        }
-        else if(canceltimer){
-          t.cancel();
-        }
-        else{
-          timer = timer - 1;
-        }
-        showtimer = timer.toString();
+    if(!kraj) {
+      Timer.periodic(onesec, (Timer t) {
+        setState(() {
+          if (timer < 1) {
+            t.cancel();
+            nextquestion();
+          }
+          else if (canceltimer) {
+            t.cancel();
+          }
+          else {
+            timer = timer - 1;
+          }
+          showtimer = timer.toString();
+        });
       });
-    });
+    }
   }
 
   void nextquestion(){
@@ -108,17 +112,19 @@ class _koznaznaState extends State<koznazna> {
     setState(() {
       if(i < 10) {
         i++;
-        j = rng.nextInt(11);
+        j = rng.nextInt(71);
         while(lista.indexOf(j) != -1 || j == 0){
-          j = rng.nextInt(11);
+          j = rng.nextInt(71);
         }
 
         lista.add(j);
       }
       else{
+        kraj = true;
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => koznazna_score(marks: marks),
         ));
+
       }
       btncolor["a"] = Colors.indigoAccent;
       btncolor["b"] = Colors.indigoAccent;
