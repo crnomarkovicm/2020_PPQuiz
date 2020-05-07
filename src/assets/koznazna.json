@@ -8,12 +8,45 @@
     "6" : "Haskell interpreter je:",
     "7" : "Haskell kod pisemo u datoteci sa ekstenzijom:",
     "8" : "Python kod pisemo u datoteci sa ekstenzijom:",
-    "9" : "Domen funkcije faktorijel u Haskell-u (sintaksa: \"promenljiva!\") su:",
-    "10" : "Koji od narednih programskih jezika je dinamicki tipiziran?"
+    "9" : "Domen funkcije faktorijel u Haskell-u su:\n(sintaksa: \"n!\")",
+    "10" : "Koji od narednih programskih jezika je dinamicki tipiziran?",
+    "11" : "Koji od navedenih programskih jezika nije cist funkcionalni programski jezik?",
+    "12" : "Kod kog od navedenih programskih jezika je neophodno navodjenje tipova?",
+    "13" : "Za koji od navedenih jezika kazemo da je slabo tipiziran?",
+    "14" : "Ko je uveo lambda racun?",
+    "15" : "U kom od navedenih operativnih sistema nije podrzan koncept niti?",
+    "16" : "Koji programski jezik je zvanicno prvi logicki programski jezik?",
+    "17" : "Koji od navedenih programskih jezika je logicki programski jezik?",
+    "18" : "Koji od navedenih programskih jezika nije logicki programski jezik?",
+    "19" : "Koja programska paradigma je nastala kao jedna od posledica softverske krize?",
+    "20" : "Koji od narednih jezika nije objektno orijentisan?",
+    "21" : "Koja je onovna paradigma programskog jezika Erlang?",
+    "22" : "Koja je onovna paradigma programskog jezika Elixir?",
+    "23" : "Koja je onovna paradigma programskog jezika Perl?",
+    "24" : "Koja je onovna paradigma programskog jezika Lua?",
+    "25" : "Koja je onovna paradigma programskog jezika PHP?",
+    "26" : "Koja je onovna paradigma programskog jezika Ruby?",
+    "27" : "Koja je onovna paradigma programskog jezika Swift?",
+    "28" : "Koja je onovna paradigma programskog jezika F#?",
+    "29" : "Koja je onovna paradigma programskog jezika GO?",
+    "30" : "Koja je onovna paradigma programskog jezika Kotlin?",
+    "31" : "Koja je onovna paradigma programskog jezika Clojure?",
+    "32" : "Koja je onovna paradigma programskog jezika Haskell?",
+    "33" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "34" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "35" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?",
+    "36" : "Kom od navedenih jezika je osnovna paradigma imperativna?",
+    "37" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "38" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "39" : "Kom od navedenih jezika je osnovna paradigma skript?",
+    "40" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "41" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "42" : "Kom od navedenih jezika je osnovna paradigma objektno orijentisana?",
+    "43" : "Kom od navedenih jezika je osnovna paradigma funkcionalna?"
   },
   {
     "1": {
-      "a": "Denis Richie",
+      "a": "Dennis Ritchie",
       "b": "Guido van Rossum",
       "c": "Linus Torvalds",
       "d": "Maja Crnomarkovic"
@@ -71,6 +104,204 @@
       "b": "Java",
       "c": "C",
       "d": "Haskell"
+    },
+    "11": {
+      "a": "Haskell",
+      "b": "Clean",
+      "c": "Miranda",
+      "d": "C++"
+    },
+    "12": {
+      "a": "Python",
+      "b": "Haskell",
+      "c": "C",
+      "d": "Scala"
+    },
+    "13": {
+      "a": "Python",
+      "b": "Java",
+      "c": "Haskell",
+      "d": "C#"
+    },
+    "14": {
+      "a": "Alonzo Church",
+      "b": "John von Neumann",
+      "c": "Alan Turing",
+      "d": "Brian Kernighan"
+    },
+    "15": {
+      "a": "Linux",
+      "b": "Mac OS X",
+      "c": "Windows Vista",
+      "d": "Podrzan je u svakom od navedenih!"
+    },
+    "16": {
+      "a": "Fortran",
+      "b": "Prolog",
+      "c": "C",
+      "d": "ABSYS(Aberdeen SYStem)"
+    },
+    "17": {
+      "a": "Prolog",
+      "b": "Java",
+      "c": "Haskell",
+      "d": "Scalla"
+    },
+    "18": {
+      "a": "Prolog",
+      "b": "ASP",
+      "c": "Datalog",
+      "d": "Python"
+    },
+    "19": {
+      "a": "Logicka",
+      "b": "Funkcionalna",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "20": {
+      "a": "C++",
+      "b": "C#",
+      "c": "Python",
+      "d": "Haskell"
+    },
+    "21": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "22": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "23": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "24": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "25": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "26": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "27": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "28": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "29": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "30": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "31": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "32": {
+      "a": "Funkcionalna",
+      "b": "Skript",
+      "c": "Objektno orijentisana",
+      "d": "Imperativna"
+    },
+    "33": {
+      "a": "Perl",
+      "b": "Swift",
+      "c": "Kotlin",
+      "d": "Erlang"
+    },
+    "34": {
+      "a": "PHP",
+      "b": "GO",
+      "c": "F#",
+      "d": "Ruby"
+    },
+    "35": {
+      "a": "PHP",
+      "b": "Ruby",
+      "c": "Kotlin",
+      "d": "Elixir"
+    },
+    "36": {
+      "a": "Erlang",
+      "b": "F#",
+      "c": "PHP",
+      "d": "GO"
+    },
+    "37": {
+      "a": "Erlang",
+      "b": "Perl",
+      "c": "GO",
+      "d": "Kotlin"
+    },
+    "38": {
+      "a": "Ruby",
+      "b": "F#",
+      "c": "Haskell",
+      "d": "Kotlin"
+    },
+    "39": {
+      "a": "Erlang",
+      "b": "Haskell",
+      "c": "GO",
+      "d": "PHP"
+    },
+    "40": {
+      "a": "Ruby",
+      "b": "Erlang",
+      "c": "GO",
+      "d": "Java"
+    },
+    "41": {
+      "a": "Clojure",
+      "b": "Haskell",
+      "c": "Kotlin",
+      "d": "GO"
+    },
+    "42": {
+      "a": "Perl",
+      "b": "Lua",
+      "c": "PHP",
+      "d": "Swift"
+    },
+    "43": {
+      "a": "Swift",
+      "b": "Haskell",
+      "c": "Python",
+      "d": "Java"
     }
   },
   {
@@ -83,6 +314,39 @@
     "7": ".hs",
     "8": ".py",
     "9": "prirodni brojevi",
-    "10": "Python"
+    "10": "Python",
+    "11": "C++",
+    "12": "C",
+    "13": "C#",
+    "14": "Alonzo Church",
+    "15": "Podrzan je u svakom od navedenih!",
+    "16": "ABSYS(Aberdeen SYStem)",
+    "17": "Prolog",
+    "18": "Python",
+    "19": "Objektno orijentisana",
+    "20": "Haskell",
+    "21" : "Funkcionalna",
+    "22" : "Funkcionalna",
+    "23" : "Skript",
+    "24" : "Skript",
+    "25" : "Skript",
+    "26" : "Skript",
+    "27" : "Objektno orijentisana",
+    "28" : "Funkcionalna",
+    "29" : "Imperativna",
+    "30" : "Objektno orijentisana",
+    "31" : "Funkcionalna",
+    "32" : "Funkcionalna",
+    "33" : "Erlang",
+    "34" : "F#",
+    "35" : "Elixir",
+    "36" : "GO",
+    "37" : "Perl",
+    "38" : "Ruby",
+    "39" : "PHP",
+    "40" : "Java",
+    "41" : "Kotlin",
+    "42" : "Swift",
+    "43" : "Haskell"
   }
 ]
