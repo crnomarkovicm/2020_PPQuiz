@@ -1,65 +1,65 @@
 [
   {
     "A":{
-      "1": "Asoc1 a1",
-      "2": "Asoc1 a2",
-      "3": "Asoc1 a3",
-      "4": "Asoc1 a4",
-      "5": "Resenje1 A"
+      "1": "Spora kompilacija",
+      "2": "Brze izvrsavanje",
+      "3": "Manja fleksibilnost",
+      "4": "Tip u fazi kompilacije",
+      "5": "Staticki tipiziran"
     },
     "B":{
-      "1": "Asoc1 b1",
-      "2": "Asoc1 b2",
-      "3": "Asoc1 b3",
-      "4": "Asoc1 b4",
-      "5": "Resenje1 B"
+      "1": "Semantika",
+      "2": "Sintaksa",
+      "3": "Masinski zavisan/nezavisan",
+      "4": "Pisanje programa",
+      "5": "Programski jezik"
     },
     "C":{
-      "1": "Asoc1 c1",
-      "2": "Asoc1 c2",
-      "3": "Asoc1 c3",
-      "4": "Asoc1 c4",
-      "5": "Resenje1 C"
+      "1": "Lazy evaluation",
+      "2": "Call by need",
+      "3": "Beskonacne strukture",
+      "4": "Nestriktni izrazi",
+      "5": "Nestriktna semantika"
     },
     "D":{
-      "1": "Asoc1 d1",
-      "2": "Asoc1 d2",
-      "3": "Asoc1 d3",
-      "4": "Asoc1 d4",
-      "5": "Resenje1 D"
+      "1": "Transparentnost referenci",
+      "2": "Rekurzija",
+      "3": "John Backus",
+      "4": "Bez bocnih efekata",
+      "5": "Funkcionalna paradigma"
     },
-    "E": "Konacno1"
+    "E": "Haskell"
   },
   {
     "A":{
-      "1": "Asoc2 a1",
-      "2": "Asoc2 a2",
-      "3": "Asoc2 a3",
-      "4": "Asoc2 a4",
-      "5": "Resenje2 A"
+      "1": "Sa/bez tipova",
+      "2": "Formalni model",
+      "3": "Normalni oblik",
+      "4": "Redukcije",
+      "5": "Lambda racun"
     },
     "B":{
-      "1": "Asoc2 b1",
-      "2": "Asoc2 b2",
-      "3": "Asoc2 b3",
-      "4": "Asoc2 b4",
-      "5": "Resenje2 B"
+      "1": "Globalna svojstva jezika",
+      "2": "Vise programskih jezika",
+      "3": "Komponentna",
+      "4": "Konkurentna",
+      "5": "Programska paradigma"
     },
     "C":{
-      "1": "Asoc2 c1",
-      "2": "Asoc2 c2",
-      "3": "Asoc2 c3",
-      "4": "Asoc2 c4",
-      "5": "Resenje2 C"
+      "1": "Staticki tipiziran",
+      "2": "GHCi",
+      "3": "Nestriktna semantika",
+      "4": "Programski jezik",
+      "5": "Haskell"
     },
     "D":{
-      "1": "Asoc2 d1",
-      "2": "Asoc2 d2",
-      "3": "Asoc2 d3",
-      "4": "Asoc2 d4",
-      "5": "Resenje2 D"
+      "1": "Reduce",
+      "2": "Map",
+      "3": "Filter",
+      "4": "Viseg reda",
+      "5": "Funkcija"
     },
-    "E": "Konacno2"
+    "E": "Funkcionalna paradigma"
   },
   {
     "A":{

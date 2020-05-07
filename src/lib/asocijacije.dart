@@ -10,9 +10,9 @@ import 'dart:io';
 
 
 class asocijacije extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder(
       future: DefaultAssetBundle.of(context).loadString("assets/asocijacije.json"),
       builder: (context, snapshot){
@@ -48,17 +48,18 @@ class asoc extends StatefulWidget {
 
 class _asocState extends State<asoc> {
 
-  var mydata;
-  _asocState(this.mydata);
+  var myData;
+  _asocState(this.myData);
 
-  int kol_score = 4;
-  int polje_score = 16;
-  int konacno_score = 0;
+  int kolScore = 4;
+  int poljeScore = 16;
+  int konacnoScore = 0;
   int score = 0;
   var rnd = new Random();
   int i = 0;
-  int timer = 120;
-  String show_timer = "120";
+  int timer = 180;
+  String showTimer = "180";
+  bool krajIgre = false;
 
   bool pogodjenoA = false;
   bool pogodjenoB = false;
@@ -69,17 +70,23 @@ class _asocState extends State<asoc> {
 
   @override
   void initState(){
+    krajIgre = false;
     i = rnd.nextInt(3);
-    starttimer();
+    print(i);
+    startTimer();
     super.initState();
+
   }
 
-  void starttimer() async {
+  void startTimer() async {
     const sec = Duration(seconds: 1);
     Timer.periodic(sec, (Timer t){
+      if (!mounted) return;
       setState((){
-        if(timer < 1){
-          score = konacno_score + kol_score + polje_score;
+        if(krajIgre == true){
+          t.cancel();
+        }else if(timer < 1){
+          score = konacnoScore + kolScore + poljeScore;
           t.cancel();
           showDialog(
               context: context,
@@ -133,37 +140,45 @@ class _asocState extends State<asoc> {
         }
         else{
           timer = timer - 1;
+          if(krajIgre == true)
+            t.cancel();
         }
-        show_timer = timer.toString();
+        showTimer = timer.toString();
       });
     });
   }
 
 
-  Widget polje(kolona,oznaka){
+  Widget polje(kolona, oznaka){
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    var width = deviceInfo.size.width;
+    var height = deviceInfo.size.height;
 
     return FlipCard(
       onFlip: (){
-        polje_score = polje_score - 1;
+        poljeScore = poljeScore - 1;
       },
       direction: FlipDirection.HORIZONTAL,
       front: Padding(
           padding: EdgeInsets.symmetric(
-            vertical: 8.0,
+            vertical: 6.5,
             horizontal: 5.0,
           ),
           child: Material (
             elevation: 5.0,
             borderRadius:  BorderRadius.circular(100.00),
             child: Container(
-              child: Text(
+              child: Align(
+                  alignment: Alignment.center,
+                child: Text(
                 kolona+oznaka,
                 style: Theme.of(context).textTheme.display2,
                 textAlign: TextAlign.center,
+              )
               ),
               color: QuizColors.primary.color,
-              width: 200.0,
-              height: 40.0,
+              width: (width - 20.0)/2,
+              height: (height - 130.0)/12,
             ),
           )
         ),
@@ -176,14 +191,17 @@ class _asocState extends State<asoc> {
             elevation: 5.0,
             borderRadius:  BorderRadius.circular(100.00),
             child: Container(
-              child: Text(
-                mydata[i][kolona][oznaka].toString(),
+              child: Align(
+                alignment: Alignment.center,
+                child:Text(
+                myData[i][kolona][oznaka].toString(),
                 style: Theme.of(context).textTheme.display2,
                 textAlign: TextAlign.center,
+              )
               ),
               color: QuizColors.primary.color,
-              width: 200.0,
-              height: 40.0,
+              width: (width - 20.0)/2,
+              height: (height - 130.0)/12,
             ),
           )
       ),
@@ -192,51 +210,50 @@ class _asocState extends State<asoc> {
 
   TextEditingController _textFieldController = TextEditingController();
 
-  @override
-  void dispose(){
-    _textFieldController.dispose();
-    super.dispose();
-  }
 
-  void povecaj_score(){
-    kol_score = kol_score - 1;
-    konacno_score = konacno_score + 10;
+  void povecajScore(){
+    kolScore = kolScore - 1;
+    konacnoScore = konacnoScore + 10;
   }
 
 
-  Widget kolonaG(ind_kolone){
+  Widget kolonaG(indKolone){
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    var width = deviceInfo.size.width;
+    var height = deviceInfo.size.height;
+
     String tekst;
 
-    if(ind_kolone == "A"){
+    if(indKolone == "A"){
       if(pogodjenoA){
-        tekst = mydata[i]["A"]["5"];
+        tekst = myData[i]["A"]["5"];
       }
       else tekst = "Resenje kolone A" ;
     }
-    if(ind_kolone == "B"){
+    if(indKolone == "B"){
       if(pogodjenoB){
-        tekst = mydata[i]["B"]["5"];
+        tekst = myData[i]["B"]["5"];
       }
       else tekst = "Resenje kolone B" ;
     }
     return Padding(
         padding: EdgeInsets.symmetric(
-          vertical: 3.0,
-          horizontal: 10.0,
+          vertical: 2.0,
+          horizontal: 5.0,
         ),
         child: Container(
           child: Column(
             children: [
-              polje(ind_kolone, "1"),
-              polje(ind_kolone, "2"),
-              polje(ind_kolone, "3"),
-              polje(ind_kolone, "4"),
+              polje(indKolone, "1"),
+              polje(indKolone, "2"),
+              polje(indKolone, "3"),
+              polje(indKolone, "4"),
               MaterialButton(
                   onPressed: (){
                     return showDialog(
                         context: context,
                         builder:  (context) => AlertDialog(
-                          title:Text("Unesite resenje kolone " + ind_kolone + ":",
+                          title:Text("Unesite resenje kolone " + indKolone + ":",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 15) ),
@@ -253,9 +270,9 @@ class _asocState extends State<asoc> {
                               var value = _textFieldController.text;
                               _textFieldController.clear();
 
-                              if (value == mydata[i][ind_kolone]["5"]){
-                                povecaj_score();
-                                if(ind_kolone == "A")
+                              if (value == myData[i][indKolone]["5"]){
+                                povecajScore();
+                                if(indKolone == "A")
                                   pogodjenoA = true;
                                 else pogodjenoB = true;
                                 return showDialog(
@@ -287,8 +304,7 @@ class _asocState extends State<asoc> {
                                         ),
                                       );
                                     });
-                              }
-                              },
+                              }},
                           )
                           ],
 
@@ -298,43 +314,47 @@ class _asocState extends State<asoc> {
                   child: Text(
                     tekst,
                     style: Theme.of(context).textTheme.display2,
+                      textAlign: TextAlign.center
                   ),
                   color: QuizColors.secondary.color,
                   splashColor: QuizColors.secondary.color,
                   highlightColor: Colors.indigo[700],
-                  minWidth: 200.0,
-                  height: 37.0,
+                  minWidth: (width - 20.0)/2,
+                  height: (height - 130.0)/12,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
               )
             ],
           ),
-          width: 185.0,
-          height: 285.0,
+          width: (width - 20.0)/2,
+          height: (height - 110.0)/2,
           color: QuizColors.primary.color ,
         )
     );
   }
 
 
-  Widget kolonaD(ind_kolone){
+  Widget kolonaD(indKolone){
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    var width = deviceInfo.size.width;
+    var height = deviceInfo.size.height;
     String tekst;
 
-    if(ind_kolone == "C"){
+    if(indKolone == "C"){
       if(pogodjenoC){
-        tekst = mydata[i]["C"]["5"];
+        tekst = myData[i]["C"]["5"];
       }
       else tekst = "Resenje kolone C" ;
     }
-    if(ind_kolone == "D"){
+    if(indKolone == "D"){
       if(pogodjenoD){
-        tekst = mydata[i]["D"]["5"];
+        tekst = myData[i]["D"]["5"];
       }
       else tekst = "Resenje kolone D" ;
     }
     return Padding(
         padding: EdgeInsets.symmetric(
-          vertical: 3.0,
-          horizontal: 10.0,
+          vertical: 2.0,
+          horizontal: 5.0,
         ),
         child: Container(
           child: Column(
@@ -344,7 +364,7 @@ class _asocState extends State<asoc> {
                     return showDialog(
                         context: context,
                         builder:  (context) => AlertDialog(
-                          title:Text("Unesite resenje kolone " + ind_kolone + ":",
+                          title:Text("Unesite resenje kolone " + indKolone + ":",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 15) ),
@@ -361,9 +381,9 @@ class _asocState extends State<asoc> {
                               var value = _textFieldController.text;
                               _textFieldController.clear();
 
-                              if (value == mydata[i][ind_kolone]["5"]){
-                                povecaj_score();
-                                if(ind_kolone == "C")
+                              if (value == myData[i][indKolone]["5"]){
+                                povecajScore();
+                                if(indKolone == "C")
                                   pogodjenoC = true;
                                 else pogodjenoD = true;
                                 return showDialog(
@@ -403,22 +423,23 @@ class _asocState extends State<asoc> {
                   child: Text(
                     tekst,
                     style: Theme.of(context).textTheme.display2,
+                      textAlign: TextAlign.center
                   ),
                   color: QuizColors.secondary.color,
                   splashColor: QuizColors.secondary.color,
                   highlightColor: Colors.indigo[700],
-                  minWidth: 200.0,
-                  height: 37.0,
+                  minWidth: (width - 20.0)/2,
+                  height: (height - 130.0)/12,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
               ),
-              polje(ind_kolone, "4"),
-              polje(ind_kolone, "3"),
-              polje(ind_kolone, "2"),
-              polje(ind_kolone, "1"),
+              polje(indKolone, "4"),
+              polje(indKolone, "3"),
+              polje(indKolone, "2"),
+              polje(indKolone, "1"),
             ],
           ),
-          width: 185.0,
-          height: 285.0,
+          width: (width - 20.0)/2,
+          height: (height - 110.0)/2,
           color: QuizColors.primary.color ,
         )
     );
@@ -426,6 +447,10 @@ class _asocState extends State<asoc> {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData deviceInfo = MediaQuery.of(context);
+    var width = deviceInfo.size.width;
+    var height = deviceInfo.size.height;
+
     return WillPopScope(
       onWillPop: (){
         return showDialog(
@@ -496,8 +521,8 @@ class _asocState extends State<asoc> {
                         var value = _textFieldController.text;
                         _textFieldController.clear();
 
-                        if (value == mydata[i]['E']) {
-                           score = konacno_score + kol_score + polje_score + 30;
+                        if (value == myData[i]['E']) {
+                           score = konacnoScore + kolScore + poljeScore + 30;
                           return showDialog(
                               context: context,
                               builder: (context) {
@@ -520,7 +545,8 @@ class _asocState extends State<asoc> {
                                         ),
                                         ),
                                       width: 200.0,
-                                        height:200.0,),
+                                        height:200.0,
+                                      ),
 
                                       MaterialButton(
                                           onPressed: (){
@@ -572,8 +598,8 @@ class _asocState extends State<asoc> {
                   color: QuizColors.secondary.color,
                   splashColor: QuizColors.secondary.color,
                   highlightColor: Colors.indigo[700],
-                  minWidth: 300.0,
-                  height: 40.0,
+                  minWidth: width - 70.0,
+                  height: (height - 200.0)/12,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
               ),
 
@@ -585,19 +611,20 @@ class _asocState extends State<asoc> {
               ),
                   MaterialButton(
                     onPressed: (){
+                      krajIgre = true;
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => homepage(),
                       ));
                     },
                     child:  Text(
-                     "Preostalo vreme: " +  show_timer + "  Napusti igru",
+                     "Preostalo vreme: " +  showTimer + "  Napusti igru",
                       style: Theme.of(context).textTheme.display2,
                     ),
                       color: QuizColors.secondary.color,
                       splashColor: QuizColors.secondary.color,
                       highlightColor: Colors.indigo[700],
-                      minWidth: 400.0,
-                      height: 35.0,
+                      minWidth: width-50.0,
+                      height: (height - 200.0)/12,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))
                   )
             ]
