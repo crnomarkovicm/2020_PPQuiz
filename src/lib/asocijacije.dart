@@ -71,7 +71,7 @@ class _asocState extends State<asoc> {
   @override
   void initState(){
     krajIgre = false;
-    i = rnd.nextInt(3);
+    i = rnd.nextInt(4);
     print(i);
     startTimer();
     super.initState();
@@ -226,13 +226,13 @@ class _asocState extends State<asoc> {
 
     if(indKolone == "A"){
       if(pogodjenoA){
-        tekst = myData[i]["A"]["5"];
+        tekst = myData[i]["A"]["r"];
       }
       else tekst = "Resenje kolone A" ;
     }
     if(indKolone == "B"){
       if(pogodjenoB){
-        tekst = myData[i]["B"]["5"];
+        tekst = myData[i]["B"]["r"];
       }
       else tekst = "Resenje kolone B" ;
     }
@@ -270,7 +270,7 @@ class _asocState extends State<asoc> {
                               var value = _textFieldController.text;
                               _textFieldController.clear();
 
-                              if (value == myData[i][indKolone]["5"]){
+                              if (value == myData[i][indKolone]["r"]){
                                 povecajScore();
                                 if(indKolone == "A")
                                   pogodjenoA = true;
@@ -341,13 +341,13 @@ class _asocState extends State<asoc> {
 
     if(indKolone == "C"){
       if(pogodjenoC){
-        tekst = myData[i]["C"]["5"];
+        tekst = myData[i]["C"]["r"];
       }
       else tekst = "Resenje kolone C" ;
     }
     if(indKolone == "D"){
       if(pogodjenoD){
-        tekst = myData[i]["D"]["5"];
+        tekst = myData[i]["D"]["r"];
       }
       else tekst = "Resenje kolone D" ;
     }
@@ -381,7 +381,7 @@ class _asocState extends State<asoc> {
                               var value = _textFieldController.text;
                               _textFieldController.clear();
 
-                              if (value == myData[i][indKolone]["5"]){
+                              if (value == myData[i][indKolone]["r"]){
                                 povecajScore();
                                 if(indKolone == "C")
                                   pogodjenoC = true;
@@ -521,7 +521,7 @@ class _asocState extends State<asoc> {
                         var value = _textFieldController.text;
                         _textFieldController.clear();
 
-                        if (value == myData[i]['E']) {
+                        if (value == myData[i]['R']) {
                            score = konacnoScore + kolScore + poljeScore + 30;
                           return showDialog(
                               context: context,
