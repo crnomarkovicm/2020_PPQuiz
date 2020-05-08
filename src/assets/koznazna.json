@@ -67,7 +67,7 @@
     "65" : "Na kom programskom jeziku je, pored C-a i C++-a, zasnovan Apple-ov macOS?",
     "66" : "Koji od navedenih programskih jezika je nazvan po francuskom matematicaru i filozofu?",
     "67" : "Za programski jezik JavaScript moze se reci da je:",
-    "68" : "",
+    "68" : "Koja kompanija je razvila programski jezik Java?",
     "69" : "Programski jezik Python je nazvan po:",
     "70" : "Ko je autor programskog jezika C?"
   },
@@ -475,10 +475,10 @@
       "d": "Staticki, slabo tipiziran"
     },
     "68": {
-      "a": "",
-      "b": "",
-      "c": "",
-      "d": ""
+      "a": "Google",
+      "b": "Microsoft",
+      "c": "Sun Microsystem",
+      "d": "IBM"
     },
     "69": {
       "a": "Zmiji",
@@ -561,7 +561,7 @@
     "65" : "Objective-C",
     "66" : "Pascal",
     "67" : "Dinamicki, slabo tipiziran",
-    "68" : "",
+    "68" : "Sun Microsystem",
     "69" : "Likovima iz britanske komedije",
     "70" : "Dennis Ritchie"
   }

@@ -77,9 +77,9 @@ class _koznaznaState extends State<koznazna> {
   @override
   void initState(){
     kraj = false;
-    j = rng.nextInt(11);
+    j = rng.nextInt(71);
     while(j == 0)
-      j = rng.nextInt(11);
+      j = rng.nextInt(71);
     lista.add(j);
     starttimer();
     super.initState();
@@ -112,9 +112,9 @@ class _koznaznaState extends State<koznazna> {
     setState(() {
       if(i < 10) {
         i++;
-        j = rng.nextInt(11);
+        j = rng.nextInt(71);
         while(lista.indexOf(j) != -1 || j == 0){
-          j = rng.nextInt(11);
+          j = rng.nextInt(71);
         }
 
         lista.add(j);
