@@ -122,5 +122,191 @@
       "r": "Dinamicki tipiziran"
     },
     "R": "Python"
+  },
+  {
+    "A":{
+      "1": "Heavyweight",
+      "2": "Lightweight",
+      "3": "Moze da pocinje implicitno",
+      "4": "Slican potprogramu",
+      "r": "Task"
+    },
+    "B":{
+      "1": "Prvi oblik sinhronizacije",
+      "2": "Uzajamno iskljucivanje",
+      "3": "P i V",
+      "4": "Algol68, Java",
+      "r": "Semafori"
+    },
+    "C":{
+      "1": "Amdalov zakon",
+      "2": "Porast broja procesora",
+      "3": "Ubrzavanje izvrsavanja",
+      "4": "Linearna",
+      "r": "Skalabilnost"
+    },
+    "D":{
+      "1": "Simetricni multiprocesori",
+      "2": "Visejezgarni procesori",
+      "3": "Mreze radnih stanica",
+      "4": "Mreze u opstem smislu",
+      "r": "Portabilnost"
+    },
+    "R": "Konkurentno programiranje"
+  },
+  {
+    "A":{
+      "1": "Foster, Elkok",
+      "2": "Rad sa aksiomama",
+      "3": "Deduktivnim putem generise odgovor",
+      "4": "Prvi jezik svog tipa",
+      "r": "ABSYS"
+    },
+    "B":{
+      "1": "Koristi resavac za iskaznu logiku",
+      "2": "Hamiltonov ciklus",
+      "3": "Programski jezik",
+      "4": "Bojenje grafova",
+      "r": "ASP"
+    },
+    "C":{
+      "1": "Programski jezik",
+      "2": "Metod rezolucije i logika I reda",
+      "3": "Q-system",
+      "4": "Hornove klauze",
+      "r": "Prolog"
+    },
+    "D":{
+      "1": "Nije Tjuring kompletan jezik",
+      "2": "Integracija podataka",
+      "3": "Umrezavanje",
+      "4": "Cloud computing",
+      "r": "Prolog"
+    },
+    "R": "Logicko programiranje"
+  },
+  {
+    "A":{
+      "1": "Recnik/signatura",
+      "2": "Funkcijski simboli",
+      "3": "Predikatski simboli",
+      "4": "Literal",
+      "r": "Logika prvog reda"
+    },
+    "B":{
+      "1": "Semantika",
+      "2": "Sintaksa",
+      "3": "Masinski zavisan/nezavisan",
+      "4": "Pisanje programa",
+      "r": "Programski jezik"
+    },
+    "C":{
+      "1": "Opsta tvrdjenja",
+      "2": "Hornove klauze u punom obliku",
+      "3": "GLAVA :- TELO",
+      "4": "Uslovne recenice",
+      "r": "Pravila"
+    },
+    "D":{
+      "1": "Program stvara drugi program",
+      "2": "Program prosiruje sam sebe",
+      "3": "asserta, assertz",
+      "4": "retreat, retreatall",
+      "r": "Metaprogramiranje"
+    },
+    "R": "Prolog"
+  },
+  {
+    "A":{
+      "1": "Prva faza programiranja",
+      "2": "Trik programiranje",
+      "3": "FORTRAN, ALGOL, COBOL",
+      "4": "GO-TO naredbe",
+      "r": "Operaciona paradigma"
+    },
+    "B": {
+      "1": "Sekvencijalna kompozicija",
+      "2": "Alternacija",
+      "3": "Iteracija",
+      "4": "Dijkstra",
+      "r": "Strukturna paradigma"
+    },
+    "C": {
+      "1": "Podrutine",
+      "2": "Funkcije",
+      "3": "Korisnicki definisani tipovi",
+      "4": "Mehanizam prenosa parametara",
+      "r": "Proceduralna paradigma"
+    },
+    "D": {
+      "1": "Nezavisne celine",
+      "2": "Celine medjusobno komuniciraju",
+      "3": "Skrivanje podataka",
+      "4": "Biblioteke",
+      "r": "Modularna paradigma"
+    },
+    "R": "Imperativna paradigma"
+  },
+  {
+    "A": {
+      "1": "Nakon izracunavanja izraza",
+      "2": "Nakon izvrsavanja funkcije",
+      "3": "Promena stanja u memoriji",
+      "4": "-, -=, +=, ++",
+      "r": "Propratni efekti"
+    },
+    "B": {
+      "1": "Po vrednosti",
+      "2": "Po referenci",
+      "3": "Po imenu",
+      "4": "Po rezultatu",
+      "r": "Prenos parametara"
+    },
+    "C": {
+      "1": "Smetanje podataka",
+      "2": "Usteda memorije",
+      "3": "Samo za aktivne potprograme",
+      "4": "Povecavaju cenu poziva potprograma",
+      "r": "Stek okviri"
+    },
+    "D":{
+      "1": "Globalna svojstva jezika",
+      "2": "Vise programskih jezika",
+      "3": "Komponentna",
+      "4": "Konkurentna",
+      "r": "Programska paradigma"
+    },
+    "R": "Imperativna paradigma"
+  },
+  {
+    "A": {
+      "1": "Skup mehanizama",
+      "2": "Skrivanje detalja implementacije",
+      "3": "Stiti od spoljasnjih uticaja",
+      "4": "Implementaciona nezavosnost",
+      "r": "Enkapsulacija"
+    },
+    "B": {
+      "1": "Ima ponasanje (operacije)",
+      "2": "Ima osobine (atribute)",
+      "3": "Instanca klase",
+      "4": "Medjusobna komunikacija",
+      "r": "Objekat"
+    },
+    "C": {
+      "1": "Kreiranje novih klasa od postojecih",
+      "2": "Osnovne/bazne klase",
+      "3": "Hijerarhija",
+      "4": "Visestruko",
+      "r": "Nasledjivanje"
+    },
+    "D":{
+      "1": "Interne operacije",
+      "2": "Ne mora biti poznata korisniku",
+      "3": "KAKO?",
+      "4": "Programer",
+      "r": "Implementacija"
+    },
+    "R": "Objektno orijentisano programiranje"
   }
 ]

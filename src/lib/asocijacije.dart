@@ -71,7 +71,7 @@ class _asocState extends State<asoc> {
   @override
   void initState(){
     krajIgre = false;
-    i = rnd.nextInt(4);
+    i = rnd.nextInt(10);
     print(i);
     startTimer();
     super.initState();
@@ -281,6 +281,7 @@ class _asocState extends State<asoc> {
                                       return AlertDialog(
                                         content: Text(
                                           "Tacno",
+                                          textAlign: TextAlign.center,
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 15
@@ -297,6 +298,7 @@ class _asocState extends State<asoc> {
                                       return AlertDialog(
                                         content: Text(
                                           "Netacno",
+                                            textAlign: TextAlign.center,
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 15
@@ -391,6 +393,7 @@ class _asocState extends State<asoc> {
                                     builder: (context) {
                                       return AlertDialog(
                                         content: Text("Tacno",
+                                            textAlign: TextAlign.center,
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 15
@@ -404,6 +407,7 @@ class _asocState extends State<asoc> {
                                     builder: (context) {
                                       return AlertDialog(
                                         content: Text("Netacno",
+                                            textAlign: TextAlign.center,
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 15
@@ -579,9 +583,10 @@ class _asocState extends State<asoc> {
                               builder: (context) {
                                 return AlertDialog(
                                   content: Text("Netacno",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 15
+                                        fontSize: 15,
                                     ),),
                                 );
                               });
