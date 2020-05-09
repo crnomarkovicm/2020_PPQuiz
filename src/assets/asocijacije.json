@@ -5,30 +5,30 @@
       "2": "Brze izvrsavanje",
       "3": "Manja fleksibilnost",
       "4": "Tip u fazi kompilacije",
-      "5": "Staticki tipiziran"
+      "r": "Staticki tipiziran"
     },
     "B":{
       "1": "Semantika",
       "2": "Sintaksa",
       "3": "Masinski zavisan/nezavisan",
       "4": "Pisanje programa",
-      "5": "Programski jezik"
+      "r": "Programski jezik"
     },
     "C":{
       "1": "Lazy evaluation",
       "2": "Call by need",
       "3": "Beskonacne strukture",
       "4": "Nestriktni izrazi",
-      "5": "Nestriktna semantika"
+      "r": "Nestriktna semantika"
     },
     "D":{
       "1": "Transparentnost referenci",
       "2": "Rekurzija",
       "3": "John Backus",
       "4": "Bez bocnih efekata",
-      "5": "Funkcionalna paradigma"
+      "r": "Funkcionalna paradigma"
     },
-    "E": "Haskell"
+    "R": "Haskell"
   },
   {
     "A":{
@@ -36,91 +36,277 @@
       "2": "Formalni model",
       "3": "Normalni oblik",
       "4": "Redukcije",
-      "5": "Lambda racun"
+      "r": "Lambda racun"
     },
     "B":{
       "1": "Globalna svojstva jezika",
       "2": "Vise programskih jezika",
       "3": "Komponentna",
       "4": "Konkurentna",
-      "5": "Programska paradigma"
+      "r": "Programska paradigma"
     },
     "C":{
       "1": "Staticki tipiziran",
       "2": "GHCi",
       "3": "Nestriktna semantika",
       "4": "Programski jezik",
-      "5": "Haskell"
+      "r": "Haskell"
     },
     "D":{
-      "1": "Reduce",
-      "2": "Map",
-      "3": "Filter",
-      "4": "Viseg reda",
-      "5": "Funkcija"
+      "1": "Viseparadigmatski jezik",
+      "2": "Striktna semantika",
+      "3": "Konkurentnost",
+      "4": "Tip se moze izostaviti",
+      "r": "Scala"
     },
-    "E": "Funkcionalna paradigma"
+    "R": "Funkcionalna paradigma"
   },
   {
     "A":{
-      "1": "Asoc3 a1",
-      "2": "Asoc3 a2",
-      "3": "Asoc3 a3",
-      "4": "Asoc3 a4",
-      "5": "Resenje3 A"
+      "1": "Upravljanje procesima",
+      "2": "Ulaz/izlaz",
+      "3": "Zastita i autorizacija",
+      "4": "Datum i vreme",
+      "r": "Sistemske funkcije"
     },
     "B":{
-      "1": "Asoc3 b1",
-      "2": "Asoc3 b2",
-      "3": "Asoc3 b3",
-      "4": "Asoc3 b4",
-      "5": "Resenje3 B"
+      "1": "Ucitavanje komandi pre obrade",
+      "2": "Skracen zapis",
+      "3": "Globalne promenljive",
+      "4": "Sed, awk, sh",
+      "r": "Perl"
     },
     "C":{
-      "1": "Asoc3 c1",
-      "2": "Asoc3 c2",
-      "3": "Asoc3 c3",
-      "4": "Asoc3 c4",
-      "5": "Resenje3 C"
+      "1": "Skupovi",
+      "2": "Recnici",
+      "3": "Torke",
+      "4": "Liste",
+      "r": "Visi tipovi podataka"
     },
     "D":{
-      "1": "Asoc3 d1",
-      "2": "Asoc3 d2",
-      "3": "Asoc3 d3",
-      "4": "Asoc3 d4",
-      "5": "Resenje3 D"
+      "1": "Jezik opste namene",
+      "2": "Provera tipa pred koriscenje",
+      "3": "Ogranicenja",
+      "4": "Lokalne promenljive za blok",
+      "r": "Python"
     },
-    "E": "Konacno3"
+    "R": "Skript programiranje"
   },
   {
     "A":{
-      "1": "Asoc4 a1",
-      "2": "Asoc4 a2",
-      "3": "Asoc4 a3",
-      "4": "Asoc4 a4",
-      "5": "Resenje4 A"
+      "1": "Semantika",
+      "2": "Sintaksa",
+      "3": "Masinski zavisan/nezavisan",
+      "4": "Pisanje programa",
+      "r": "Programski jezik"
     },
     "B":{
-      "1": "Asoc4 b1",
-      "2": "Asoc4 b2",
-      "3": "Asoc4 b3",
-      "4": "Asoc4 b4",
-      "5": "Resenje4 B"
+      "1": "Jezici prosirenja",
+      "2": "Jezici za www",
+      "3": "Komandni jezici",
+      "4": "Jezici opste namene",
+      "r": "Skript programiranje"
     },
     "C":{
-      "1": "Asoc4 c1",
-      "2": "Asoc4 c2",
-      "3": "Asoc4 c3",
-      "4": "Asoc4 c4",
-      "5": "Resenje4 C"
+      "1": "AllDifferent",
+      "2": "AllEqual",
+      "3": "MaxSum",
+      "4": "ExactSum",
+      "r": "Ogranicenja"
     },
     "D":{
-      "1": "Asoc4 d1",
-      "2": "Asoc4 d2",
-      "3": "Asoc4 d3",
-      "4": "Asoc4 d4",
-      "5": "Resenje4 D"
+      "1": "Veca fleksibilnost",
+      "2": "Brza kompilacija",
+      "3": "Sporije izvrsavanje",
+      "4": "Tip u fazi izvrsavanja",
+      "r": "Dinamicki tipiziran"
     },
-    "E": "Konacno4"
+    "R": "Python"
+  },
+  {
+    "A":{
+      "1": "Heavyweight",
+      "2": "Lightweight",
+      "3": "Moze da pocinje implicitno",
+      "4": "Slican potprogramu",
+      "r": "Task"
+    },
+    "B":{
+      "1": "Prvi oblik sinhronizacije",
+      "2": "Uzajamno iskljucivanje",
+      "3": "P i V",
+      "4": "Algol68, Java",
+      "r": "Semafori"
+    },
+    "C":{
+      "1": "Amdalov zakon",
+      "2": "Porast broja procesora",
+      "3": "Ubrzavanje izvrsavanja",
+      "4": "Linearna",
+      "r": "Skalabilnost"
+    },
+    "D":{
+      "1": "Simetricni multiprocesori",
+      "2": "Visejezgarni procesori",
+      "3": "Mreze radnih stanica",
+      "4": "Mreze u opstem smislu",
+      "r": "Portabilnost"
+    },
+    "R": "Konkurentno programiranje"
+  },
+  {
+    "A":{
+      "1": "Foster, Elkok",
+      "2": "Rad sa aksiomama",
+      "3": "Deduktivnim putem generise odgovor",
+      "4": "Prvi jezik svog tipa",
+      "r": "ABSYS"
+    },
+    "B":{
+      "1": "Koristi resavac za iskaznu logiku",
+      "2": "Hamiltonov ciklus",
+      "3": "Programski jezik",
+      "4": "Bojenje grafova",
+      "r": "ASP"
+    },
+    "C":{
+      "1": "Programski jezik",
+      "2": "Metod rezolucije i logika I reda",
+      "3": "Q-system",
+      "4": "Hornove klauze",
+      "r": "Prolog"
+    },
+    "D":{
+      "1": "Nije Tjuring kompletan jezik",
+      "2": "Integracija podataka",
+      "3": "Umrezavanje",
+      "4": "Cloud computing",
+      "r": "Prolog"
+    },
+    "R": "Logicko programiranje"
+  },
+  {
+    "A":{
+      "1": "Recnik/signatura",
+      "2": "Funkcijski simboli",
+      "3": "Predikatski simboli",
+      "4": "Literal",
+      "r": "Logika prvog reda"
+    },
+    "B":{
+      "1": "Semantika",
+      "2": "Sintaksa",
+      "3": "Masinski zavisan/nezavisan",
+      "4": "Pisanje programa",
+      "r": "Programski jezik"
+    },
+    "C":{
+      "1": "Opsta tvrdjenja",
+      "2": "Hornove klauze u punom obliku",
+      "3": "GLAVA :- TELO",
+      "4": "Uslovne recenice",
+      "r": "Pravila"
+    },
+    "D":{
+      "1": "Program stvara drugi program",
+      "2": "Program prosiruje sam sebe",
+      "3": "asserta, assertz",
+      "4": "retreat, retreatall",
+      "r": "Metaprogramiranje"
+    },
+    "R": "Prolog"
+  },
+  {
+    "A":{
+      "1": "Prva faza programiranja",
+      "2": "Trik programiranje",
+      "3": "FORTRAN, ALGOL, COBOL",
+      "4": "GO-TO naredbe",
+      "r": "Operaciona paradigma"
+    },
+    "B": {
+      "1": "Sekvencijalna kompozicija",
+      "2": "Alternacija",
+      "3": "Iteracija",
+      "4": "Dijkstra",
+      "r": "Strukturna paradigma"
+    },
+    "C": {
+      "1": "Podrutine",
+      "2": "Funkcije",
+      "3": "Korisnicki definisani tipovi",
+      "4": "Mehanizam prenosa parametara",
+      "r": "Proceduralna paradigma"
+    },
+    "D": {
+      "1": "Nezavisne celine",
+      "2": "Celine medjusobno komuniciraju",
+      "3": "Skrivanje podataka",
+      "4": "Biblioteke",
+      "r": "Modularna paradigma"
+    },
+    "R": "Imperativna paradigma"
+  },
+  {
+    "A": {
+      "1": "Nakon izracunavanja izraza",
+      "2": "Nakon izvrsavanja funkcije",
+      "3": "Promena stanja u memoriji",
+      "4": "-, -=, +=, ++",
+      "r": "Propratni efekti"
+    },
+    "B": {
+      "1": "Po vrednosti",
+      "2": "Po referenci",
+      "3": "Po imenu",
+      "4": "Po rezultatu",
+      "r": "Prenos parametara"
+    },
+    "C": {
+      "1": "Smetanje podataka",
+      "2": "Usteda memorije",
+      "3": "Samo za aktivne potprograme",
+      "4": "Povecavaju cenu poziva potprograma",
+      "r": "Stek okviri"
+    },
+    "D":{
+      "1": "Globalna svojstva jezika",
+      "2": "Vise programskih jezika",
+      "3": "Komponentna",
+      "4": "Konkurentna",
+      "r": "Programska paradigma"
+    },
+    "R": "Imperativna paradigma"
+  },
+  {
+    "A": {
+      "1": "Skup mehanizama",
+      "2": "Skrivanje detalja implementacije",
+      "3": "Stiti od spoljasnjih uticaja",
+      "4": "Implementaciona nezavosnost",
+      "r": "Enkapsulacija"
+    },
+    "B": {
+      "1": "Ima ponasanje (operacije)",
+      "2": "Ima osobine (atribute)",
+      "3": "Instanca klase",
+      "4": "Medjusobna komunikacija",
+      "r": "Objekat"
+    },
+    "C": {
+      "1": "Kreiranje novih klasa od postojecih",
+      "2": "Osnovne/bazne klase",
+      "3": "Hijerarhija",
+      "4": "Visestruko",
+      "r": "Nasledjivanje"
+    },
+    "D":{
+      "1": "Interne operacije",
+      "2": "Ne mora biti poznata korisniku",
+      "3": "KAKO?",
+      "4": "Programer",
+      "r": "Implementacija"
+    },
+    "R": "Objektno orijentisano programiranje"
   }
 ]
