@@ -1,22 +1,82 @@
 [
   {
-    "P":{
-      "1": "Nazvan po zmiji",
-      "2": "Ne znamo zasto po zmiji jos",
-      "3": "Treci trag je ovo",
-      "4": "Moze jos jedan trag",
-      "5": "SSsssSSSssssSSSsssSSS",
-      "6": "Python"
+    "0":{
+      "1": "Dinamcki, jako tipiziran",
+      "2": "Funkcionalna paradigma",
+      "3": "Nastao pod uticajem Lispa",
+      "4": "Primena u el. kupovini",
+      "5": "Ima OTP rantajm sistem",
+      "6": "Erlang"
     }
   },
   {
-    "J":{
-      "1": "Nazvan po kafi",
-      "2": "Ne znamo zasto po kafi jos",
-      "3": "Treci trag je ovo",
-      "4": "Moze jos jedan trag",
-      "5": "SSsssSSSssssSSSsssSSS",
-      "6": "Python"
+    "1":{
+      "1": "Skript paradigma",
+      "2": "Slabo tipiziran jezik",
+      "3": "Koristi ga IMDb",
+      "4": "C i AWK uticali na razvoj",
+      "5": "Nastao 1987",
+      "6": "Perl"
+    }
+  },
+  {
+    "2":{
+      "1": "Jako tipiziran jezik",
+      "2": "Skript paradigma",
+      "3": "Koristi ga WOW",
+      "4": "Prethodnik SQL",
+      "5": "Portabilan",
+      "6": "Lua"
+    }
+  },
+  {
+    "3":{
+      "1": "Sintaksa nalik Perlu",
+      "2": "Interpretiran",
+      "3": "Koristi ga AirBnb",
+      "4": "Nastao 1995",
+      "5": "Insirisan Smalltalk-om",
+      "6": "Ruby"
+    }
+  },
+  {
+    "4":{
+      "1": "Obj. Orj. paradigma",
+      "2": "Staticki jako tipiziran",
+      "3": "Nastao 2014",
+      "4": "Imperativna paradigma",
+      "5": "Razvio ga Apple",
+      "6": "Swift"
+    }
+  },
+  {
+    "5":{
+      "1": "Funkcionalna paradigna",
+      "2": "Pokrece se na .NET",
+      "3": "Lako paralelizovanje",
+      "4": "Distribuirana paradigma",
+      "5": "Primena u bioinformatici",
+      "6": "F#"
+    }
+  },
+  {
+    "6":{
+      "1": "Imperativna paradigma",
+      "2": "Staticki, jako tipiziran",
+      "3": "Pripada C familiji",
+      "4": "Nastao 2007",
+      "5": "Dizajniran u Google-u",
+      "6": "GO"
+    }
+  },
+  {
+    "7":{
+      "1": "Obj. Orj. paradigma",
+      "2": "Nastao na osnovu Java-e",
+      "3": "Nastao 2011",
+      "4": "Tip moze da se izostavi",
+      "5": "Razvoj android aplikacija",
+      "6": "Kotlin"
     }
   }
 ]
