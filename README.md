@@ -12,5 +12,7 @@ Aplikacija je podržana za Android. Da bi se pokrenula na racunaru potrebno je i
 ### Autori
 
 Maja Crnomarkovic 21/2017
-Marko Babic 77/2017
-Aleksandar Milosevic 60/2017
+
+Marko Babic 77/2017 markobabic056@gmail.com
+
+Aleksandar Milosevic 60/2017 aleksandarmilosevic98@gmail.com
