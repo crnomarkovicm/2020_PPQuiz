@@ -16,8 +16,8 @@ class asocijacije extends StatelessWidget {
     return FutureBuilder(
       future: DefaultAssetBundle.of(context).loadString("assets/asocijacije.json"),
       builder: (context, snapshot){
-        List mydata = json.decode(snapshot.data.toString());
-        if(mydata == null){
+        List myData = json.decode(snapshot.data.toString());
+        if(myData == null){
           return Scaffold(
             body: Center(
               child: Text(
@@ -30,7 +30,7 @@ class asocijacije extends StatelessWidget {
           );
         }
         else{
-          return asoc(mydata : mydata);
+          return asoc(mydata : myData);
         }
       },
     );
@@ -86,7 +86,10 @@ class _asocState extends State<asoc> {
         if(krajIgre == true){
           t.cancel();
         }else if(timer < 1){
-          score = konacnoScore + kolScore + poljeScore;
+          if(score == 0){
+            score = 0;
+          }
+          else score = konacnoScore + kolScore + poljeScore;
           t.cancel();
           showDialog(
               context: context,
@@ -103,10 +106,7 @@ class _asocState extends State<asoc> {
                                 alignment: Alignment.center,
                                 child: Text(("Nazalost, vreme je isteklo :(\nVas score je: " + score.toString()),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),
+                                  style: Theme.of(context).textTheme.display1,
                                 ),
                               ),
                               width: 200.0,
@@ -121,10 +121,10 @@ class _asocState extends State<asoc> {
                                 },
                                 child:  Text(
                                   "Igraj ponovo",
-                                  style: Theme.of(context).textTheme.display2,
+                                  style: Theme.of(context).textTheme.display1,
                                 ),
-                                color: QuizColors.secondary.color,
-                                splashColor: QuizColors.secondary.color,
+                                color:Theme.of(context).accentColor,
+                                splashColor: Theme.of(context).accentColor,
                                 highlightColor: Colors.indigo[700],
                                 minWidth: 200.0,
                                 height: 50.0,
@@ -134,7 +134,7 @@ class _asocState extends State<asoc> {
                       ),
                       width: 300.00,
                       height: 300.00,
-                      color: QuizColors.primary.color),
+                      color: Theme.of(context).primaryColor),
                 );
               });
         }
@@ -176,7 +176,7 @@ class _asocState extends State<asoc> {
                 textAlign: TextAlign.center,
               )
               ),
-              color: QuizColors.primary.color,
+              color: Theme.of(context).primaryColor,
               width: (width - 20.0)/2,
               height: (height - 130.0)/12,
             ),
@@ -199,7 +199,7 @@ class _asocState extends State<asoc> {
                 textAlign: TextAlign.center,
               )
               ),
-              color: QuizColors.primary.color,
+              color:Theme.of(context).primaryColor,
               width: (width - 20.0)/2,
               height: (height - 130.0)/12,
             ),
@@ -318,8 +318,8 @@ class _asocState extends State<asoc> {
                     style: Theme.of(context).textTheme.display2,
                       textAlign: TextAlign.center
                   ),
-                  color: QuizColors.secondary.color,
-                  splashColor: QuizColors.secondary.color,
+                  color: Theme.of(context).accentColor,
+                  splashColor: Theme.of(context).accentColor,
                   highlightColor: Colors.indigo[700],
                   minWidth: (width - 20.0)/2,
                   height: (height - 130.0)/12,
@@ -329,7 +329,7 @@ class _asocState extends State<asoc> {
           ),
           width: (width - 20.0)/2,
           height: (height - 110.0)/2,
-          color: QuizColors.primary.color ,
+          color: Theme.of(context).primaryColor ,
         )
     );
   }
@@ -429,8 +429,8 @@ class _asocState extends State<asoc> {
                     style: Theme.of(context).textTheme.display2,
                       textAlign: TextAlign.center
                   ),
-                  color: QuizColors.secondary.color,
-                  splashColor: QuizColors.secondary.color,
+                  color: Theme.of(context).accentColor,
+                  splashColor: Theme.of(context).accentColor,
                   highlightColor: Colors.indigo[700],
                   minWidth: (width - 20.0)/2,
                   height: (height - 130.0)/12,
@@ -444,7 +444,7 @@ class _asocState extends State<asoc> {
           ),
           width: (width - 20.0)/2,
           height: (height - 110.0)/2,
-          color: QuizColors.primary.color ,
+          color: Theme.of(context).primaryColor ,
         )
     );
   }
@@ -542,10 +542,7 @@ class _asocState extends State<asoc> {
                                           alignment: Alignment.center,
                                           child: Text(("Cestitamo, pogodili ste konacno resenje!\nVas score je:  " + score.toString()),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 25,
-                                          color: Colors.white
-                                        ),
+                                        style: Theme.of(context).textTheme.subhead,
                                         ),
                                         ),
                                       width: 200.0,
@@ -562,8 +559,8 @@ class _asocState extends State<asoc> {
                                             "Nastavi",
                                             style: Theme.of(context).textTheme.display2,
                                           ),
-                                          color: QuizColors.secondary.color,
-                                          splashColor: QuizColors.secondary.color,
+                                          color: Theme.of(context).accentColor,
+                                          splashColor:Theme.of(context).accentColor,
                                           highlightColor: Colors.indigo[700],
                                           minWidth: 200.0,
                                           height: 50.0,
@@ -573,7 +570,7 @@ class _asocState extends State<asoc> {
                                   ),
                                   width: 300.00,
                                   height: 300.00,
-                                      color: QuizColors.primary.color),
+                                      color: Theme.of(context).primaryColor),
                                 );
                               });
                         }
@@ -600,8 +597,8 @@ class _asocState extends State<asoc> {
                     "Konacno resenje",
                     style: Theme.of(context).textTheme.display2,
                   ),
-                  color: QuizColors.secondary.color,
-                  splashColor: QuizColors.secondary.color,
+                  color: Theme.of(context).accentColor,
+                  splashColor: Theme.of(context).accentColor,
                   highlightColor: Colors.indigo[700],
                   minWidth: width - 70.0,
                   height: (height - 200.0)/12,
@@ -625,8 +622,8 @@ class _asocState extends State<asoc> {
                      "Preostalo vreme: " +  showTimer + "  Napusti igru",
                       style: Theme.of(context).textTheme.display2,
                     ),
-                      color: QuizColors.secondary.color,
-                      splashColor: QuizColors.secondary.color,
+                      color: Theme.of(context).accentColor,
+                      splashColor: Theme.of(context).accentColor,
                       highlightColor: Colors.indigo[700],
                       minWidth: width-50.0,
                       height: (height - 200.0)/12,
@@ -635,7 +632,7 @@ class _asocState extends State<asoc> {
             ]
 
         ),
-        color: QuizColors.background.color,
+        color: Theme.of(context).backgroundColor,
       )
     );
   }

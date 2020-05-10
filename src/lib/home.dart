@@ -6,7 +6,11 @@ import 'package:ppquiz/koznazna.dart';
 import 'package:ppquiz/asocijacije.dart';
 import 'dart:io';
 import 'package:ppquiz/pogodiJezik.dart';
+import 'package:ppquiz/theme.dart';
+import 'package:provider/provider.dart';
 
+
+var darkModeEnabled = true;
 
 class homepage extends StatefulWidget {
   @override
@@ -125,6 +129,8 @@ class _homepageState extends State<homepage> {
 
   @override
   Widget build(BuildContext context) {
+  ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
+
     return WillPopScope(
         onWillPop: (){
           return showDialog(
@@ -164,23 +170,32 @@ class _homepageState extends State<homepage> {
               )
           );
         },
+
         child: Scaffold(
-            backgroundColor: Theme.of(context).backgroundColor,
+            backgroundColor:Theme.of(context).backgroundColor,
             appBar: AppBar(
               actions: <Widget>[
                 Column(
-//            TODO->ubaciti ovo u kontejnere i ispraviti visinu svakog
                   children: <Widget>[
                     Text('Tema: ',
-                        style: Theme.of(context).textTheme.overline
+                        style: Theme.of(context).textTheme.display2
                     ),
                     Expanded(
                         child:Switch(
                           value: false,
                           activeColor: Theme.of(context).cursorColor,
                           inactiveThumbColor: Theme.of(context).backgroundColor,
-// TODO
-                          onChanged: (bool) {},
+
+                          onChanged: (bool) {
+                            if(darkModeEnabled) {
+                              darkModeEnabled = false;
+                              return _themeChanger.setTheme(ThemeData.light());
+                            } else {
+                              darkModeEnabled = true;
+                              return _themeChanger.setTheme(ThemeData.dark());
+                            }
+
+                          },
                         ))
                   ],
                 )
