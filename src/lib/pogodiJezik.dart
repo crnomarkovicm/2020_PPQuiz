@@ -66,7 +66,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
 
     var izadji = false;
     int timer = 60;
-    i = rnd.nextInt(2);
+    i = rnd.nextInt(7);
     super.initState();
   }
 
@@ -79,7 +79,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
       igra_se = true;
       const sec = Duration(seconds: 1);
       var t = Timer.periodic(sec, (Timer t) {
-
+      if(this.mounted)
         setState(() {
           if (timer < 1) {
             t.cancel();
@@ -365,11 +365,11 @@ class _PogodiJezikState extends State<PogodiJezik> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Polje(1,mydata[i][a]["1"].toString(),cardKey1),
-                    Polje(2,mydata[i][a]["2"].toString(),cardKey2),
-                    Polje(3,mydata[i][a]["3"].toString(),cardKey3),
-                    Polje(4,mydata[i][a]["4"].toString(),cardKey4),
-                    Polje(5,mydata[i][a]["5"].toString(),cardKey5)
+                    Polje(1,mydata[i][i.toString()]["1"].toString(),cardKey1),
+                    Polje(2,mydata[i][i.toString()]["2"].toString(),cardKey2),
+                    Polje(3,mydata[i][i.toString()]["3"].toString(),cardKey3),
+                    Polje(4,mydata[i][i.toString()]["4"].toString(),cardKey4),
+                    Polje(5,mydata[i][i.toString()]["5"].toString(),cardKey5)
                   ],
                 ),
               ),
@@ -416,7 +416,7 @@ class _PogodiJezikState extends State<PogodiJezik> {
                                     var value = _textFieldController.text;
                                     _textFieldController.clear();
 
-                                    if (value == mydata[i][a]["6"]){
+                                    if (value == mydata[i][i.toString()]["6"]){
                                       int score = timer~/3;
                                       return showDialog(
                                           context: context,
