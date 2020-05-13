@@ -5,6 +5,8 @@
 ### Kratak opis
 Kviz aplikacija namenjena android mobilnim uredjajima. Kviz sadrzi tri igre koje sluze za zabavu, ali i da olaksaju studentima ucenje o programskim paradigmama.
 
+![PocetniEkran](https://github.com/matf-pp/2020_PPQuiz/master/Screenshots/PocetniEkran.gif)
+
 ### Jezici i tehnologije
 Korišćen je programski jezik Dart i framework Flutter u Android Studio okruženju.
 
