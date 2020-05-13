@@ -1,5 +1,7 @@
 # 2020_PPQuiz
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/38e512c4d2ef4b4fb3cdf5889e56a1f2)](https://app.codacy.com/gh/matf-pp/2020_PPQuiz?utm_source=github.com&utm_medium=referral&utm_content=matf-pp/2020_PPQuiz&utm_campaign=Badge_Grade_Dashboard)
+
 ### Kratak opis
 Kviz aplikacija namenjena android mobilnim uredjajima. Kviz sadrzi tri igre koje sluze za zabavu, ali i da olaksaju studentima ucenje o programskim paradigmama.
 
