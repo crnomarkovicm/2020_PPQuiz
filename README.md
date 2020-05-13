@@ -18,7 +18,7 @@ Cilj ove igre je otvaranjem datih osobina pogoditi o kom programskom jeziku je r
 ![Pogodi Jezik](Screenshots/PogodiJezik.gif)
 
 ### :video_game: Ko Zna Zna
-Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora. Ukoliko nakon 10s nije odgovoreno, smatra se da ste pogresili.
+Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora. Ukoliko tacno odgovorite na pitanje dobijate 5 poena, ukoliko pogresite -1 poen, a ukoliko ne odgovorite u roku od 10sekundi 0 poena.
 
 ![Ko Zna Zna](Screenshots/KoZnaZna.gif)
 
