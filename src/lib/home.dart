@@ -209,9 +209,9 @@ class _homepageState extends State<homepage> {
             ),
             body: ListView(
               children: <Widget>[
-                customcard("Asocijacije", images[0], "Cilj ove igre je sa sto manje otvorenih polja naci prvo resenja za kolone A, B, C i D a potom i konacno resenje", "asoc"),
-                customcard("Pogodi jezik", images[1], "Cilj ove igre je otvaranjem datih osobina pogoditi o kom programskom jeziku je rec ", "pj"),
-                customcard("Ko zna zna", images[2], "Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora. Ukoliko nakon 10s nije odgovoreno, smatra se da ste pogresili", "kzz"),
+                customcard("Asocijacije", images[0], "Cilj ove igre je sa sto manje otvorenih polja naci prvo resenja za kolone A, B, C i D a potom i konacno resenje.", "asoc"),
+                customcard("Pogodi jezik", images[1], "Cilj ove igre je otvaranjem datih osobina pogoditi o kom programskom jeziku je rec.", "pj"),
+                customcard("Ko zna zna", images[2], "Cilj ove igre je odgovoriti tacno na sto vise od 10 postavljenih pitanja. Za svako od njih ponudjena su 4 odgovora.", "kzz"),
               ],
             )
         )
