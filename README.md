@@ -22,12 +22,11 @@ Cilj ove igre je odgovoriti na 10 postavljenih pitanja. Za svako od njih ponudje
 
 ![Ko Zna Zna](Screenshots/KoZnaZna.gif)
 
-
 ## :bar_chart: Jezici i tehnologije
 Korišćen je programski jezik Dart i framework Flutter u Android Studio okruženju.
 
 ## :wrench: Pokretanje
-Aplikacija je podržana za Android. Da bi se pokrenula na racunaru potrebno je imati Android Studio, Dart i Flutter sdk. Mozemo je pomocu aplikacije Vysor instalirati na mobilni uredjaj sa Android operativnim sistemom i nakon toga preko mobilnog uredjaja pokretati je kao i sve ostale aplikacije. 
+Aplikacija jej podržana za Android. Da bi se pokrenula na racunaru potrebno je imati Android Studio, Dart i Flutter sdk. Mozemo je pomocu aplikacije Vysor instalirati na mobilni uredjaj sa Android operativnim sistemom i nakon toga preko mobilnog uredjaja pokretati je kao i sve ostale aplikacije. 
 
 ## :computer: Autori
 
