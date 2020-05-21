@@ -30,8 +30,8 @@ Aplikacija jej podržana za Android. Da bi se pokrenula na racunaru potrebno je 
 
 ## :computer: Autori
 
-Maja Crnomarkovic 21/2017 <mailto:majacrnomarkovic@live.com>
+Maja Crnomarkovic 21/2017 [majacrnomarkovic@live.com](mailto:majacrnomarkovic@live.com)
 
-Marko Babic 77/2017 <mailto:markobabic056@gmail.com>
+Marko Babic 77/2017 [markobabic056@gmail.com](mailto:markobabic056@gmail.com)
 
-Aleksandar Milosevic 60/2017 <mailto:aleksandarmilosevic98@gmail.com>
+Aleksandar Milosevic 60/2017 [aleksandarmilosevic98@gmail.com](mailto:aleksandarmilosevic98@gmail.com)
